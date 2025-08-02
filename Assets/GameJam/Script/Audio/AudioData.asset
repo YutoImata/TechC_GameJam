@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elements:
   - name: test
-    type: 0
+    type: 1
     audioClip: {fileID: 8300000, guid: ac3d555e839e7c645b8c005bd35220b2, type: 3}
     volume: 1
