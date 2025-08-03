@@ -11,7 +11,7 @@ namespace Tech.C
         /// この弾の種類
         /// </summary>
         public BulletType type { get; private set; }
-    
+
         [SerializeField] private float speed = 10f;
         [SerializeField] private float lifeTime = 2f;
         private float timer;
@@ -42,6 +42,11 @@ namespace Tech.C
             this.type = type;
             timer = 0f;
             rb.linearVelocity = direction.normalized * speed;
+        }
+
+        public void ReturnToPool()
+        {
+            BulletPool.I.ReturnBullet(type, this);
         }
 
     }
