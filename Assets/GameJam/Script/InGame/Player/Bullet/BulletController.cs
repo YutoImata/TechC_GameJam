@@ -25,10 +25,7 @@ namespace Tech.C
             timer += Time.deltaTime;
             if (timer >= lifeTime)
             {
-                gameObject.SetActive(false);
-                /* ===============================
-                 * TODO:個々の処理をPoolに返却する処理にする
-                 * =============================== */
+                BulletPool.I.ReturnBullet(this);
             }
         }
     }
