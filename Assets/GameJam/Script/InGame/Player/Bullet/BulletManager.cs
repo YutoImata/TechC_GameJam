@@ -7,6 +7,8 @@ namespace Tech.C
     /// </summary>
     public class BulletManager : Singleton<BulletManager>
     {
+        protected override bool UseDontDestroyOnLoad => false;
+        
         /// <summary>
         /// 指定した種類の弾を生成する処理を呼ぶ
         /// </summary>

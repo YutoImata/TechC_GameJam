@@ -9,6 +9,7 @@ namespace Tech.C
     {
         [SerializeField] private BulletController bulletPrefab;
 
+        protected override bool UseDontDestroyOnLoad => false;
         /// <summary>
         /// 指定位置に弾を生成して返す
         /// </summary>

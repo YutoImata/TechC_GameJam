@@ -24,6 +24,7 @@ namespace Tech.C
     public class BulletPool : Singleton<BulletPool>
     {
         [SerializeField] private List<BulletPoolSet> poolSets;
+        protected override bool UseDontDestroyOnLoad => false;
 
         /// <summary>
         /// プールの初期化処理
