@@ -3,25 +3,34 @@ using UnityEngine;
 
 namespace Tech.C
 {
-    // ジェネリックなオブジェクトプール基盤
+    /// <summary>
+    /// ジェネリックなオブジェクトプール基盤クラス
+    /// </summary>
     public class ObjectPool<T> where T : Component
     {
-        private readonly T prefab;
+        private readonly System.Func<T> createFunc;
         private readonly Transform parent;
         private readonly Queue<T> pool = new Queue<T>();
 
-        public ObjectPool(T prefab, Transform parent = null, int initialSize = 10)
+        /// <summary>
+        /// プールの初期化処理
+        /// </summary>
+        public ObjectPool(System.Func<T> createFunc, Transform parent = null, int initialSize = 10)
         {
-            this.prefab = prefab;
+            this.createFunc = createFunc;
             this.parent = parent;
             for (int i = 0; i < initialSize; i++)
             {
-                var obj = Object.Instantiate(prefab, parent);
+                var obj = createFunc();
+                if (parent != null) obj.transform.SetParent(parent);
                 obj.gameObject.SetActive(false);
                 pool.Enqueue(obj);
             }
         }
 
+        /// <summary>
+        /// プールからオブジェクトを取得して返す
+        /// </summary>
         public T Get()
         {
             if (pool.Count > 0)
@@ -32,12 +41,16 @@ namespace Tech.C
             }
             else
             {
-                var obj = Object.Instantiate(prefab, parent);
+                var obj = createFunc();
+                if (parent != null) obj.transform.SetParent(parent);
                 obj.gameObject.SetActive(true);
                 return obj;
             }
         }
 
+        /// <summary>
+        /// オブジェクトをプールに戻す
+        /// </summary>
         public void Return(T obj)
         {
             obj.gameObject.SetActive(false);

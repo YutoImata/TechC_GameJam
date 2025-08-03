@@ -9,6 +9,7 @@ namespace Tech.C
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed = 5f;
+        [SerializeField] private BulletType bulletType = BulletType.Normal;
         private Vector2 moveInput;
         private Rigidbody2D rb;
 
@@ -28,11 +29,12 @@ namespace Tech.C
             moveInput = new Vector2(x, 0);
         }
 
+
         public void OnFire(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                BulletManager.I.SpawnBullet(transform.position);
+                BulletManager.I.SpawnBullet(bulletType, transform.position);
             }
         }
 

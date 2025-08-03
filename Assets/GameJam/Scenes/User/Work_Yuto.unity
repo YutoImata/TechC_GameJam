@@ -119,6 +119,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &296032499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3623381524397303220, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+  m_PrefabInstance: {fileID: 5774159007047624018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &296032502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296032499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f387cee961b7686438f1c3d9cae5c71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -7228277949997710728, guid: 1500fa611f1edea40a7b3a8a3b7e9022, type: 3}
+--- !u!4 &1370204004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 903291559656026811, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+  m_PrefabInstance: {fileID: 5774159007047624018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5774159007047624018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,14 +190,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3060303329518790359, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: bulletParent
+      value: 
+      objectReference: {fileID: 1370204004}
+    - target: {fileID: 3060303329518790359, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: poolSets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060303329518790359, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: poolSets.Array.data[0].parent
+      value: 
+      objectReference: {fileID: 1370204004}
+    - target: {fileID: 3060303329518790359, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: poolSets.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: -7228277949997710728, guid: 1500fa611f1edea40a7b3a8a3b7e9022, type: 3}
+    - target: {fileID: 3060303329518790359, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: poolSets.Array.data[0].initialSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5939491323392352358, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
       propertyPath: m_Name
       value: InGame
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8424251475011900211, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3623381524397303220, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 296032502}
   m_SourcePrefab: {fileID: 100100000, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
