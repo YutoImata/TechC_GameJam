@@ -1,4 +1,4 @@
-namespace Tech.C
+namespace Tech.C.Bullet
 {
     /// <summary>
     /// 弾の種類を定義する列挙型

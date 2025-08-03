@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Tech.C
+namespace Tech.C.Bullet
 {
     /// <summary>
     /// 弾のオブジェクトプール管理クラス

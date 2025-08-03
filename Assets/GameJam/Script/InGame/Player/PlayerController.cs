@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Tech.C.Bullet;
 
-namespace Tech.C
+namespace Tech.C.Player
 {
     /// <summary>
     /// 入力を受けて、プレイヤーを移動させる処理

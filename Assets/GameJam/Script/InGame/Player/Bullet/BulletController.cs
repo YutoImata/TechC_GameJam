@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Tech.C
+namespace Tech.C.Bullet
 {
     /// <summary>
     /// 弾の挙動を制御するコンポーネント

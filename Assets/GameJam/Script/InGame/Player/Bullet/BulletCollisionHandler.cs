@@ -1,6 +1,8 @@
 using UnityEngine;
+using Tech.C.Bullet;
 
-namespace Tech.C
+using Tech.C.Bullet;
+namespace Tech.C.Bullet
 {
 
     /// <summary>
