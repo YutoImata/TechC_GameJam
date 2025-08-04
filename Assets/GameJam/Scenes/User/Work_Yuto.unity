@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 750866611438506266, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: m_Name
+      value: SceneController
+      objectReference: {fileID: 0}
     - target: {fileID: 767037143591398434, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

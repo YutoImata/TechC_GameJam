@@ -9,7 +9,6 @@ namespace Tech.C.Item
     public class GamblingItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private GamblingType gamblingType;
-        [SerializeField] private GaugeController gaugeController;
 
         [Header("設定")]
         [SerializeField] private int gambleValueValue = 10;
@@ -80,9 +79,11 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log("B");
             if (other.CompareTag("Bullet"))
             {
-                gaugeController.AddGamble(gambleValueValue); // 仮の加算量。必要に応じて調整
+                GaugeController.I.AddGamble(gambleValueValue); // 仮の加算量。必要に応じて調整
+                Debug.Log("BB");
             }
             OnCollected();
         }
