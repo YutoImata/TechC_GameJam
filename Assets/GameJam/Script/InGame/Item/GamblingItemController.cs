@@ -10,6 +10,8 @@ namespace Tech.C.Item
     public class GamblingItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private GamblingType gamblingType;
+        private MoveType moveType;
+
         /// <summary>
         /// 外部からタイプをセットする
         /// </summary>
@@ -28,9 +30,15 @@ namespace Tech.C.Item
 
         void Update()
         {
-            // 下方向に移動
+            Fall();
+        }
+
+        public void Fall()
+        {
+            Debug.Log("Fallが呼ばれた");
             rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
+        
 
         // 落下時の処理
         public void OnFallen()

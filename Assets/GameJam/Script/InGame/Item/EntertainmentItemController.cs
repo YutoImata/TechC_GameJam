@@ -10,6 +10,8 @@ namespace Tech.C.Item
     public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private EntertainmentType entertainmentType;
+        private MoveType moveType;
+
         /// <summary>
         /// 外部からタイプをセットする
         /// </summary>
@@ -28,7 +30,12 @@ namespace Tech.C.Item
 
         void Update()
         {
-            // 下方向に移動
+            Fall();
+        }
+
+        // 毎フレームの落下・移動処理
+        public void Fall()
+        {
             rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
 
