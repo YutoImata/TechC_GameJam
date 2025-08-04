@@ -12,16 +12,12 @@ namespace Tech.C.Item
         [SerializeField] private EntertainmentType entertainmentType;
         private MoveType moveType;
 
-        /// <summary>
-        /// 外部からタイプをセットする
-        /// </summary>
-        public void SetType(EntertainmentType type)
-        {
-            entertainmentType = type;
-        }
         [SerializeField] private float fallSpeed = 2f;
 
         private Rigidbody2D rb;
+
+        private ItemPool itemPool;
+        private int poolIndex;
 
         void Start()
         {
@@ -38,19 +34,44 @@ namespace Tech.C.Item
         {
             rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
+        /// <summary>
+        /// 外部からタイプをセットする
+        /// </summary>
+        public void SetType(EntertainmentType type)
+        {
+            entertainmentType = type;
+        }
+
+        // Pool参照をセットするメソッド
+        public void SetPool(ItemPool pool, int index)
+        {
+            itemPool = pool;
+            poolIndex = index;
+        }
+
+        // 共通返却処理
+        private void ReturnToPool()
+        {
+            if (itemPool != null)
+            {
+                itemPool.ReturnItem(gameObject, poolIndex);
+                Debug.Log("ItemPoolに返却できた");
+
+            }
+            else
+                Debug.LogError("ItemPoolに返却できません");
+        }
 
         // 落下時の処理
         public void OnFallen()
         {
-            // 画面外などで呼ばれる想定
-            Destroy(gameObject);
+            ReturnToPool();
         }
 
         // プレイヤー取得時の処理
         public void OnCollected()
         {
-            // ゲージ加算など（GaugeManager呼び出し等）
-            Destroy(gameObject);
+            ReturnToPool();
         }
 
         // 弾との衝突判定

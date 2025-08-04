@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8002931164550501927}
   - component: {fileID: -4934926613328336604}
   - component: {fileID: 7905176432459907112}
-  - component: {fileID: 6809641883965129763}
+  - component: {fileID: -1771022072288906325}
   - component: {fileID: -2871322804671486626}
   m_Layer: 0
-  m_Name: Sleep
+  m_Name: PlaingCards
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5ac2707b103047478e7d22e8adf871e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a3970c0779503643bcf18ec85db0c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6809641883965129763
+--- !u!114 &-1771022072288906325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,10 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6882585684949341207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d8f9b3c88caf94a8a46a3b530135cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c22d7487502f07d42b2587061c8dbef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entertainmentType: 1
+  gamblingType: 1
   fallSpeed: 2
 --- !u!114 &-2871322804671486626
 MonoBehaviour:

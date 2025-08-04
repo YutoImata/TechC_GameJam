@@ -50,7 +50,6 @@ namespace Tech.C.Item
             if (itemFactory != null && spawnPoint != null)
             {
                 GameObject item = itemFactory.GetRandomItem(spawnPoint.position);
-                Debug.Log(item.name);
                 var mover = item.GetComponent<ItemMover>();
                 mover.MoveItem();
             }

@@ -5,7 +5,7 @@ namespace Tech.C.Item
     /// </summary>
     public enum GamblingType
     {
-        chip,
-        PlayerCards,
+        Chip,
+        PlayingCards,
     }
 }

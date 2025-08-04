@@ -11,6 +11,12 @@ namespace Tech.C.Item
     {
         [SerializeField] private GamblingType gamblingType;
         private MoveType moveType;
+        [SerializeField] private float fallSpeed = 2f;
+        private Rigidbody2D rb;
+
+        // Pool参照を保持
+        private ItemPool itemPool;
+        private int poolIndex;
 
         /// <summary>
         /// 外部からタイプをセットする
@@ -19,9 +25,13 @@ namespace Tech.C.Item
         {
             gamblingType = type;
         }
-        [SerializeField] private float fallSpeed = 2f;
 
-        private Rigidbody2D rb;
+        // Pool参照をセットするメソッド
+        public void SetPool(ItemPool pool, int index)
+        {
+            itemPool = pool;
+            poolIndex = index;
+        }
 
         void Start()
         {
@@ -35,26 +45,40 @@ namespace Tech.C.Item
 
         public void Fall()
         {
-            rb.linearVelocity = new Vector2(0, -fallSpeed);
+            if (rb != null)
+                rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
-        
+
+
+        // アイテムをPoolに返却
+        public void ReturnToPool()
+        {
+            if (itemPool != null)
+            {
+                itemPool.ReturnItem(gameObject, poolIndex);
+                Debug.Log("ItemPoolに返却できた");
+
+            }
+            else
+                Debug.LogError("ItemPoolに返却できません");
+        }
 
         // 落下時の処理
         public void OnFallen()
         {
-            Destroy(gameObject);
+            ReturnToPool();
         }
 
         // プレイヤー取得時の処理
         public void OnCollected()
         {
-            Destroy(gameObject);
+            ReturnToPool();
         }
 
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Bullet"))
+            if (other.CompareTag("Wall"))
             {
                 OnCollected();
             }
