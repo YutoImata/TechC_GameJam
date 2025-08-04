@@ -6,6 +6,6 @@ namespace Tech.C.Item
     public enum EntertainmentType
     {
         Game,
-        Sleep,
+        Bed,
     }
 }

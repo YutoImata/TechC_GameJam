@@ -10,23 +10,18 @@ namespace Tech.C
     {
         // スライダーUI
         [SerializeField] private Slider gambleSlider;
-        [SerializeField] private Slider funSlider;
+        [SerializeField] private Slider entertainmentSlider;
         [SerializeField] private Slider moneySlider;
 
         // 現在値
         private int gambleValue = 0;
-        private int funValue = 0;
+        private int entertainmentValue = 0;
         private int moneyValue = 100;
 
         // 最大値
         private const int MAX_GAMBLE = 100;
-        private const int MAX_FUN = 100;
+        private const int MAX_ENTERTAINMENT = 100;
         private const int MAX_MONEY = 100;
-
-        // 増加量
-        [SerializeField] private int addGamble = 10;
-        [SerializeField] private int addFun = 5;
-        [SerializeField] private int addMoney = 15;
 
         private void Update()
         {
@@ -45,14 +40,14 @@ namespace Tech.C
             gambleValue = Mathf.Clamp(gambleValue - amount, 0, MAX_GAMBLE);
         }
 
-        public void AddFun(int amount)
+        public void AddEntertainment(int amount)
         {
-            funValue = Mathf.Clamp(funValue + amount, 0, MAX_FUN);
+            entertainmentValue = Mathf.Clamp(entertainmentValue + amount, 0, MAX_ENTERTAINMENT);
         }
 
-        public void SubtractFun(int amount)
+        public void Subtractentertainment(int amount)
         {
-            funValue = Mathf.Clamp(funValue - amount, 0, MAX_FUN);
+            entertainmentValue = Mathf.Clamp(entertainmentValue - amount, 0, MAX_ENTERTAINMENT);
         }
 
         public void AddMoney(int amount)
@@ -74,10 +69,10 @@ namespace Tech.C
                 gambleSlider.value = gambleValue;
             }
 
-            if (funSlider != null)
+            if (entertainmentSlider != null)
             {
-                funSlider.maxValue = MAX_FUN;
-                funSlider.value = funValue;
+                entertainmentSlider.maxValue = MAX_ENTERTAINMENT;
+                entertainmentSlider.value = entertainmentValue;
             }
 
             if (moneySlider != null)

@@ -1,5 +1,4 @@
 using UnityEngine;
-using Tech.C.Item;
 
 namespace Tech.C.Item
 {
@@ -9,12 +8,10 @@ namespace Tech.C.Item
     /// </summary>
     public class ItemManager : MonoBehaviour
     {
-        [Header("アイテムPrefab")]
-        [SerializeField] private GameObject entertainmentItemPrefab;
-        [SerializeField] private GameObject gamblingItemPrefab;
-
-        [Header("生成位置・間隔")]
-        [SerializeField] private Transform spawnPoint;
+        [Header("生成位置")]
+        [SerializeField] private ItemSpawner itemSpawner;
+        
+        [Header("生成する間隔")]
         [SerializeField] private float spawnInterval = 2f;
 
         [Header("Factory参照")]
@@ -30,7 +27,6 @@ namespace Tech.C.Item
 
         void Update()
         {
-            if (!isSpawning) return;
             timer += Time.deltaTime;
             if (timer >= spawnInterval)
             {
@@ -52,9 +48,12 @@ namespace Tech.C.Item
         /// </summary>
         private void SpawnRandomItem()
         {
-            if (itemFactory != null && spawnPoint != null)
+            if (itemFactory != null && itemSpawner != null)
             {
-                itemFactory.GetRandomItem(spawnPoint.position);
+                Vector3 spawnPos = itemSpawner.GetRandomSpawnPosition();
+                GameObject item = itemFactory.GetRandomItem(spawnPos);
+                var mover = item.GetComponent<ItemMover>();
+                mover.MoveItem();
             }
         }
     }
