@@ -1737,7 +1737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.3000002}
+  m_AnchoredPosition: {x: 0, y: -1.2999992}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5234862576629269411
@@ -2227,9 +2227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98906ed3235e8e4ea83f97c0ad1cd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gambleSlider: {fileID: 0}
-  funSlider: {fileID: 0}
-  moneySlider: {fileID: 0}
+  gambleSlider: {fileID: 6543256557507718763}
+  entertainmentSlider: {fileID: 0}
+  moneySlider: {fileID: 3450640517406260846}
 --- !u!1 &7451906571049338056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3933467457977701626, guid: ecef35966f39da248871cd002fc56932, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.11
+      value: 5.66
       objectReference: {fileID: 0}
     - target: {fileID: 3933467457977701626, guid: ecef35966f39da248871cd002fc56932, type: 3}
       propertyPath: m_LocalPosition.z
