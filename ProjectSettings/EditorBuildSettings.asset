@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/GameJam/Scenes/Title.unity
     guid: db75293364584ba4db78f2eec3a8266e
   - enabled: 1
-    path: Assets/GameJam/Scenes/Result.unity
+    path: Assets/GameJam/Scenes/Goodend.unity
     guid: 7fcf4b1b6ea160d4fabe9acdef28e4e8
   - enabled: 1
     path: Assets/GameJam/Scenes/Stagefolder/Stage1.unity
