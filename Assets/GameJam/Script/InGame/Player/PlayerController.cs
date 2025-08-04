@@ -13,10 +13,13 @@ namespace Tech.C.Player
         [SerializeField] private BulletType bulletType = BulletType.Normal;
         private Vector2 moveInput;
         private Rigidbody2D rb;
+        private PlayerAnimationController animCtrl;
+        private float lastMoveX = 0f;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            animCtrl = GetComponent<PlayerAnimationController>();
         }
 
         /// <summary>
@@ -50,6 +53,30 @@ namespace Tech.C.Player
         private void MovePlayer()
         {
             rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+            SetAnimationByDirection();
+        }
+
+        /// <summary>
+        /// 移動方向に応じてアニメーションを切り替える
+        /// </summary>
+        private void SetAnimationByDirection()
+        {
+            if (animCtrl == null) Debug.LogError("Animator == null");
+
+            if (moveInput.x == 0 && lastMoveX == 0)
+            {
+                animCtrl.SetIdle();
+            }
+            else if (moveInput.x > 0)
+            {
+                animCtrl.SetMoveRight();
+            }
+            else if (moveInput.x < 0)
+            {
+                animCtrl.SetMoveLeft();
+            }
+
+            lastMoveX = moveInput.x;
         }
     }
 }
