@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 601118008810725358}
   - component: {fileID: 3572616809148325286}
   m_Layer: 0
-  m_Name: SceneContriller
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1087,8 +1087,9 @@ GameObject:
   - component: {fileID: 5979860532772932332}
   - component: {fileID: 148379748562557226}
   - component: {fileID: 8831790493235661051}
-  - component: {fileID: 4293138789299192367}
   - component: {fileID: 3914645768044060778}
+  - component: {fileID: 1137732704026563737}
+  - component: {fileID: 8740195085536252365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1357,7 +1358,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4b71046a4d36146a222508d59680fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &4293138789299192367
+--- !u!114 &3914645768044060778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482484684091948658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bf9c71707a582468611d19106d713c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1137732704026563737
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -1379,7 +1392,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3914645768044060778
+--- !u!114 &8740195085536252365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2265,7 +2278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gambleSlider: {fileID: 6543256557507718763}
   entertainmentSlider: {fileID: 0}
-  moneySlider: {fileID: 3450640517406260846}
 --- !u!1 &7451906571049338056
 GameObject:
   m_ObjectHideFlags: 0

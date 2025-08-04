@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2871322804671486626}
   m_Layer: 0
   m_Name: Game
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entertainmentType: 0
   fallSpeed: 2
+  entertainmentValue: 10
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0

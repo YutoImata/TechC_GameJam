@@ -9,13 +9,12 @@ namespace Tech.C.Item
     public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private EntertainmentType entertainmentType;
-        [SerializeField] private GaugeController gaugeController;
         private ItemMoveType moveType;
 
         [Header("設定")]
         [SerializeField] private float fallSpeed = 2f;
         [SerializeField] private int entertainmentValue = 10;
-        
+
 
 
         private Rigidbody2D rb;
@@ -59,8 +58,6 @@ namespace Tech.C.Item
             if (itemPool != null)
             {
                 itemPool.ReturnItem(gameObject, poolIndex);
-                Debug.Log("ItemPoolに返却できた");
-
             }
             else
                 Debug.LogError("ItemPoolに返却できません");
@@ -83,7 +80,7 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
-                gaugeController.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
+                GaugeController.I.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
             }
             OnCollected();
         }
