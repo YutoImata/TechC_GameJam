@@ -6,6 +6,6 @@ namespace Tech.C.Item
     public enum GamblingType
     {
         chip,
-        Trump,
+        PlayerCards,
     }
 }

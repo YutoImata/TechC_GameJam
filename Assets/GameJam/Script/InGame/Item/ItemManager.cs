@@ -9,10 +9,6 @@ namespace Tech.C.Item
     /// </summary>
     public class ItemManager : MonoBehaviour
     {
-        [Header("アイテムPrefab")]
-        [SerializeField] private GameObject entertainmentItemPrefab;
-        [SerializeField] private GameObject gamblingItemPrefab;
-
         [Header("生成位置・間隔")]
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private float spawnInterval = 2f;
@@ -30,7 +26,6 @@ namespace Tech.C.Item
 
         void Update()
         {
-            if (!isSpawning) return;
             timer += Time.deltaTime;
             if (timer >= spawnInterval)
             {
@@ -55,6 +50,7 @@ namespace Tech.C.Item
             if (itemFactory != null && spawnPoint != null)
             {
                 GameObject item = itemFactory.GetRandomItem(spawnPoint.position);
+                Debug.Log(item.name);
                 var mover = item.GetComponent<ItemMover>();
                 mover.MoveItem();
             }

@@ -35,7 +35,6 @@ namespace Tech.C.Item
 
         public void Fall()
         {
-            Debug.Log("Fallが呼ばれた");
             rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
         

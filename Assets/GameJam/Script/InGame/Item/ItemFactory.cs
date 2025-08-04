@@ -14,8 +14,10 @@ namespace Tech.C.Item
         [Header("Pool参照")]
         [SerializeField] private ItemPool itemPool;
         [Header("PrefabIndex")]
-        [SerializeField] private int entertainmentPrefabIndex = 0;
-        [SerializeField] private int gamblingPrefabIndex = 1;
+        [SerializeField] private int chip = 0;
+        [SerializeField] private int playingCards = 1;
+        [SerializeField] private int game = 2;
+        [SerializeField] private int bed = 3;
 
         /// <summary>
         /// 確率に応じてアイテムをPoolから取得
@@ -40,7 +42,7 @@ namespace Tech.C.Item
                     sum += rate.rate;
                     if (eRand < sum)
                     {
-                        var obj = itemPool.GetItem(position, entertainmentPrefabIndex);
+                        var obj = itemPool.GetItem(position, chip);
                         // 必要ならEntertainmentTypeをセット
                         var ctrl = obj.GetComponent<EntertainmentItemController>();
                         if (ctrl != null) ctrl.SetType(rate.type);
@@ -58,7 +60,7 @@ namespace Tech.C.Item
                     sum += rate.rate;
                     if (gRand < sum)
                     {
-                        var obj = itemPool.GetItem(position, gamblingPrefabIndex);
+                        var obj = itemPool.GetItem(position, playingCards);
                         // 必要ならGamblingTypeをセット
                         var ctrl = obj.GetComponent<GamblingItemController>();
                         if (ctrl != null) ctrl.SetType(rate.type);
