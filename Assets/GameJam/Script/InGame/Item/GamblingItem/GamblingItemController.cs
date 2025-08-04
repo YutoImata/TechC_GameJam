@@ -1,5 +1,4 @@
 using UnityEngine;
-using Tech.C.Item;
 using Tech.C.Interface;
 
 namespace Tech.C.Item
@@ -56,8 +55,6 @@ namespace Tech.C.Item
             if (itemPool != null)
             {
                 itemPool.ReturnItem(gameObject, poolIndex);
-                Debug.Log("ItemPoolに返却できた");
-
             }
             else
                 Debug.LogError("ItemPoolに返却できません");

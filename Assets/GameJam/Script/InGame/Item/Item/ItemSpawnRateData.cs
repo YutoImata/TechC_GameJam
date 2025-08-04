@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Tech.C.Item;
 
 namespace Tech.C.Item
 {

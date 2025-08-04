@@ -1,19 +1,20 @@
 using UnityEngine;
 
-namespace Tech.C
+namespace Tech.C.Item
 {
-    public class ItemSpawner : MonoBehaviour
+    [System.Serializable]
+    public class ItemSpawner
     {
-        // Start is called before the first frame update
-        void Start()
+        [Header("生成範囲左端")] public Transform spawnLeft;
+        [Header("生成範囲右端")] public Transform spawnRight;
+
+        public Vector3 GetRandomSpawnPosition()
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            if (spawnLeft == null || spawnRight == null) return Vector3.zero;
+            float minX = spawnLeft.position.x;
+            float maxX = spawnRight.position.x;
+            float y = spawnLeft.position.y;
+            return new Vector3(UnityEngine.Random.Range(minX, maxX), y, 0);
         }
     }
 }
