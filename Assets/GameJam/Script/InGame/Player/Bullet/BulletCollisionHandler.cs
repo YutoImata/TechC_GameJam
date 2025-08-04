@@ -1,7 +1,5 @@
 using UnityEngine;
-using Tech.C.Bullet;
 
-using Tech.C.Bullet;
 namespace Tech.C.Bullet
 {
 
