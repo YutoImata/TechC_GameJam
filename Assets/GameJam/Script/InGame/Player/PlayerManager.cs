@@ -15,7 +15,7 @@ namespace Tech.C
         }
 
         private GameState currentState;//現在の状態
-        
+
 
         void Start()
         {
@@ -25,28 +25,16 @@ namespace Tech.C
         // Update is called once per frame
         void Update()
         {
-            switch(currentState)
+            switch (currentState)
             {
                 case GameState.Game:
-
-                    Debug.Log("プレイヤーはゲームしてます。");
                     break;
-
-               
                 case GameState.GamblingGauge:
-
-                    Debug.Log("ギャンブルゲージが溜まりました。");
                     break;
-
                 case GameState.EntertainmentGauge:
-
-                    Debug.Log("娯楽ゲージが溜まりました。");
                     break;
-
                 default:
                 case GameState.None:
-
-                    Debug.Log("不明な状態です。");
                     break;
             }
 
@@ -55,7 +43,7 @@ namespace Tech.C
             {
                 currentState = GameState.None;
             }
-            else if(Input.GetKeyDown(KeyCode.Alpha2))
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 currentState = GameState.GamblingGauge;
             }
