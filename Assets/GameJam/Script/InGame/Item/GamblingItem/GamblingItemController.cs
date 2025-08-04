@@ -10,14 +10,18 @@ namespace Tech.C.Item
     {
         [SerializeField] private GamblingType gamblingType;
         [SerializeField] private GaugeController gaugeController;
-        private ItemMoveType moveType;
+
+        [Header("設定")]
+        [SerializeField] private int gambleValueValue = 10;
         [SerializeField] private float fallSpeed = 2f;
+
         private Rigidbody2D rb;
 
         // Pool参照を保持
         private ItemPool itemPool;
         private int poolIndex;
 
+        private ItemMoveType moveType;
         /// <summary>
         /// 外部からタイプをセットする
         /// </summary>
@@ -78,9 +82,9 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
-                gaugeController.AddGamble(10); // 仮の加算量。必要に応じて調整
-                OnCollected();
+                gaugeController.AddGamble(gambleValueValue); // 仮の加算量。必要に応じて調整
             }
+            OnCollected();
         }
     }
 }

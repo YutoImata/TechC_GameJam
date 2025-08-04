@@ -119,6 +119,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &330701436
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1787562380272089081, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4817264574998915059, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592050034866619881, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_Name
+      value: EnterParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6592050034866619881, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
 --- !u!114 &1098267678 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3450640517406260846, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
@@ -160,6 +225,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 464068620712330464, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: poolSets.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 91cd16b03abee1e47a0133cd472302de, type: 3}
     - target: {fileID: 614703164711171478, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -208,6 +277,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1514333059094836316, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.66
+      objectReference: {fileID: 0}
     - target: {fileID: 2773748637802208165, guid: 6bd25a802ef1cbc4bb27d5bf2badffa5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -254,3 +327,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5774159007047624018}
+  - {fileID: 330701436}

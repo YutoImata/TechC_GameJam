@@ -12,7 +12,11 @@ namespace Tech.C.Item
         [SerializeField] private GaugeController gaugeController;
         private ItemMoveType moveType;
 
+        [Header("設定")]
         [SerializeField] private float fallSpeed = 2f;
+        [SerializeField] private int entertainmentValue = 10;
+        
+
 
         private Rigidbody2D rb;
 
@@ -79,7 +83,7 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
-                gaugeController.AddFun(10); // 仮の加算量。必要に応じて調整
+                gaugeController.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
             }
             OnCollected();
         }
