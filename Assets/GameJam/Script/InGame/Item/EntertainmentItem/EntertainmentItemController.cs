@@ -5,33 +5,19 @@ using Tech.C.Interface;
 namespace Tech.C.Item
 {
     /// <summary>
-    /// ギャンブル系アイテムの挙動を管理するコントローラー
+    /// 娯楽系アイテムの挙動を管理するコントローラー
     /// </summary>
-    public class GamblingItemController : MonoBehaviour, IFallingItem
+    public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
-        [SerializeField] private GamblingType gamblingType;
-        private MoveType moveType;
+        [SerializeField] private EntertainmentType entertainmentType;
+        private ItemMoveType moveType;
+
         [SerializeField] private float fallSpeed = 2f;
+
         private Rigidbody2D rb;
 
-        // Pool参照を保持
         private ItemPool itemPool;
         private int poolIndex;
-
-        /// <summary>
-        /// 外部からタイプをセットする
-        /// </summary>
-        public void SetType(GamblingType type)
-        {
-            gamblingType = type;
-        }
-
-        // Pool参照をセットするメソッド
-        public void SetPool(ItemPool pool, int index)
-        {
-            itemPool = pool;
-            poolIndex = index;
-        }
 
         void Start()
         {
@@ -43,15 +29,28 @@ namespace Tech.C.Item
             Fall();
         }
 
+        // 毎フレームの落下・移動処理
         public void Fall()
         {
-            if (rb != null)
-                rb.linearVelocity = new Vector2(0, -fallSpeed);
+            rb.linearVelocity = new Vector2(0, -fallSpeed);
+        }
+        /// <summary>
+        /// 外部からタイプをセットする
+        /// </summary>
+        public void SetType(EntertainmentType type)
+        {
+            entertainmentType = type;
         }
 
+        // Pool参照をセットするメソッド
+        public void SetPool(ItemPool pool, int index)
+        {
+            itemPool = pool;
+            poolIndex = index;
+        }
 
-        // アイテムをPoolに返却
-        public void ReturnToPool()
+        // 共通返却処理
+        private void ReturnToPool()
         {
             if (itemPool != null)
             {
@@ -78,7 +77,7 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Wall"))
+            if (other.CompareTag("Bullet"))
             {
                 OnCollected();
             }

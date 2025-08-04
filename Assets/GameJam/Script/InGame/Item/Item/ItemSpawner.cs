@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Tech.C
 {
-    public class ItemMoverType : MonoBehaviour
+    public class ItemSpawner : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

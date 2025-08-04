@@ -1,9 +1,11 @@
-namespace Tech.C.Item
+using UnityEngine;
+
+namespace Tech.C
 {
-    /// <summary>
+     /// <summary>
     /// アイテムが動くパターンを列挙型で定義
     /// </summary>
-    public enum MoveType
+    public enum ItemMoveType
     {
         StraightDown,
         ZigZag,

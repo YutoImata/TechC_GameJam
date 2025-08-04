@@ -4,7 +4,7 @@ namespace Tech.C.Item
 {
     public class ItemMover : MonoBehaviour
     {
-        [SerializeField] private MoveType moveType;
+        [SerializeField] private ItemMoveType moveType;
         [SerializeField] private float fallSpeed = 2f;
 
         /// <summary>
@@ -14,13 +14,13 @@ namespace Tech.C.Item
         {
             switch (moveType)
             {
-                case MoveType.StraightDown:
+                case ItemMoveType.StraightDown:
                     transform.position += Vector3.down * fallSpeed * Time.deltaTime;
                     break;
-                case MoveType.ZigZag:
+                case ItemMoveType.ZigZag:
                     // ジグザグ移動処理を書く
                     break;
-                case MoveType.ToPlayer:
+                case ItemMoveType.ToPlayer:
                     // プレイヤー方向への移動処理を書く
                     break;
             }
