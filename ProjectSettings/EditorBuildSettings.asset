@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameJam/Scenes/InGame.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/GameJam/Scenes/Title.unity
+    guid: db75293364584ba4db78f2eec3a8266e
+  - enabled: 1
+    path: Assets/GameJam/Scenes/Result.unity
+    guid: 7fcf4b1b6ea160d4fabe9acdef28e4e8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e0dd65f74141663419cba8499de3cab2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
