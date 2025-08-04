@@ -11,12 +11,32 @@ namespace Tech.C
         public CommentMover commentMoverPrefab;
         [Header("表示するTMPオブジェクトの親")] 
         public Transform displayParent;
-        [Header("表示間隔（秒）")]
-        public float displayInterval = 2f;
         [Header("コメントPool")]
         public CommentPool commentPool;
+        [Header("表示間隔（秒）")]
+        public float displayInterval = 2f;
+
+        // コメント開始位置の設定（16方向）
+        private const int START_POS_COUNT = 16;
+        private const float RADIUS = 450f; // Canvas座標系で調整
+        private Vector3[] startPositions;
+        private static readonly Vector3 CENTER = Vector3.zero;
 
         private float timer;
+
+        private void Awake()
+        {
+            // 16方向の開始位置を円周上に生成
+            startPositions = new Vector3[START_POS_COUNT];
+            float angleStep = 360f / START_POS_COUNT;
+            for (int i = 0; i < START_POS_COUNT; i++)
+            {
+                float rad = Mathf.Deg2Rad * (angleStep * i);
+                float x = Mathf.Cos(rad) * RADIUS;
+                float y = Mathf.Sin(rad) * RADIUS;
+                startPositions[i] = new Vector3(x, y, 0f);
+            }
+        }
 
         private void Update()
         {
@@ -31,6 +51,13 @@ namespace Tech.C
         /// <summary>
         /// ランダムコメントを生成・表示
         /// </summary>
+        private const float INIT_FONT_SIZE = 36f;
+        private static readonly Color INIT_COLOR = Color.white;
+        private const float INIT_SPEED = 100f;
+        private const float INIT_ACCEL = 50f;
+        private const float INIT_FADE_START = 1.0f;
+        private const float INIT_FADE_DURATION = 1.0f;
+
         private void DisplayRandomComment()
         {
             string comment = randomSelector != null ? randomSelector.GetRandomComment() : "";
@@ -40,20 +67,32 @@ namespace Tech.C
             var tmp = commentPool.GetComment();
             tmp.transform.SetParent(displayParent, false);
             tmp.text = comment;
-            tmp.fontSize = 36;
-            tmp.color = Color.white;
+            tmp.fontSize = INIT_FONT_SIZE;
+            tmp.color = INIT_COLOR;
             tmp.alignment = TextAlignmentOptions.Center;
             tmp.gameObject.SetActive(true);
 
-            // 表示終了時にPoolへ返却（例: 3秒後に非表示）
-            StartCoroutine(ReturnCommentAfterDelay(tmp, displayInterval));
-        }
+            // 16方向からランダムで開始位置を選択
+            int idx = Random.Range(0, START_POS_COUNT);
+            Vector3 startPos = startPositions[idx];
 
-        private System.Collections.IEnumerator ReturnCommentAfterDelay(TextMeshProUGUI tmp, float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            tmp.gameObject.SetActive(false);
-            commentPool.ReturnComment(tmp);
+            // CommentMoverをアタッチ（またはPrefabから生成）
+            CommentMover mover = tmp.GetComponent<CommentMover>();
+            if (mover == null)
+            {
+                mover = tmp.gameObject.AddComponent<CommentMover>();
+            }
+
+            // 初期化（速度・加速度・フェードタイミングは定数で管理）
+            mover.Initialize(
+                tmp,
+                startPos,
+                CENTER,
+                INIT_SPEED,
+                INIT_ACCEL,
+                INIT_FADE_START,
+                INIT_FADE_DURATION
+            );
         }
     }
 }

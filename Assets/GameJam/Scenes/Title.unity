@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 1184766225}
   - component: {fileID: 1184766227}
   - component: {fileID: 1184766226}
+  - component: {fileID: 1184766228}
   m_Layer: 0
   m_Name: CommentManager
   m_TagString: Untagged
@@ -560,13 +561,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomSelector:
     commentData: {fileID: 11400000, guid: e85d4adef56d5ab448598a99deebf9d3, type: 2}
-  commentMoverPrefab:
-    moveSpeed: 2
-    targetPosition: {x: 0, y: 0, z: 0}
-    startPosition: {x: 0, y: 0, z: 0}
+  commentMoverPrefab: {fileID: 1184766228}
   displayParent: {fileID: 1908247822}
-  displayInterval: 2
   commentPool: {fileID: 1184766226}
+  displayInterval: 2
+--- !u!114 &1184766228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184766224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15154bfa9cd0d240a87ba840ee41a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  acceleration: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  fadeStartTime: 1
+  fadeDuration: 1
 --- !u!1 &1317432888
 GameObject:
   m_ObjectHideFlags: 0
