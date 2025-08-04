@@ -46,7 +46,7 @@ namespace Tech.C
             tmp.gameObject.SetActive(true);
 
             // 表示終了時にPoolへ返却（例: 3秒後に非表示）
-            StartCoroutine(ReturnCommentAfterDelay(tmp, 3f));
+            StartCoroutine(ReturnCommentAfterDelay(tmp, displayInterval));
         }
 
         private System.Collections.IEnumerator ReturnCommentAfterDelay(TextMeshProUGUI tmp, float delay)
