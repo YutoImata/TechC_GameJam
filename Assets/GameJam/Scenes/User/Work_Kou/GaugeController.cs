@@ -3,14 +3,15 @@ using UnityEngine.UI;
 
 namespace Tech.C
 {
-
+    /// <summary>
+    /// 各スライダーの管理と、UIの更新を行う
+    /// </summary>
     public class GaugeController : MonoBehaviour
     {
-
         // スライダーUI
-        public Slider gambleSlider;
-        public Slider funSlider;
-        public Slider moneySlider;
+        [SerializeField] private Slider gambleSlider;
+        [SerializeField] private Slider funSlider;
+        [SerializeField] private Slider moneySlider;
 
         // 現在値
         private int gambleValue = 0;
@@ -18,21 +19,14 @@ namespace Tech.C
         private int moneyValue = 100;
 
         // 最大値
-        public int maxGamble = 100;
-        public int maxFun = 100;
-        public int maxMoney = 100;
+        private const int MAX_GAMBLE = 100;
+        private const int MAX_FUN = 100;
+        private const int MAX_MONEY = 100;
 
-        // 増加量（任意）
-        public int addGamble = 10;
-        public int addFun = 5;
-        public int addMoney = 20;
-
-        /* テスト用 */
-        [ContextMenu("１０点ギャンブル追加")]
-        public void AddGambleTest()
-        {
-            AddGamble(10);
-        }
+        // 増加量
+        [SerializeField] private int addGamble = 10;
+        [SerializeField] private int addFun = 5;
+        [SerializeField] private int addMoney = 15;
 
         private void Update()
         {
@@ -43,32 +37,32 @@ namespace Tech.C
 
         public void AddGamble(int amount)
         {
-            gambleValue = Mathf.Clamp(gambleValue + amount, 0, maxGamble);
+            gambleValue = Mathf.Clamp(gambleValue + amount, 0, MAX_GAMBLE);
         }
 
         public void SubtractGamble(int amount)
         {
-            gambleValue = Mathf.Clamp(gambleValue - amount, 0, maxGamble);
+            gambleValue = Mathf.Clamp(gambleValue - amount, 0, MAX_GAMBLE);
         }
 
         public void AddFun(int amount)
         {
-            funValue = Mathf.Clamp(funValue + amount, 0, maxFun);
+            funValue = Mathf.Clamp(funValue + amount, 0, MAX_FUN);
         }
 
         public void SubtractFun(int amount)
         {
-            funValue = Mathf.Clamp(funValue - amount, 0, maxFun);
+            funValue = Mathf.Clamp(funValue - amount, 0, MAX_FUN);
         }
 
         public void AddMoney(int amount)
         {
-            moneyValue = Mathf.Clamp(moneyValue + amount, 0, maxMoney);
+            moneyValue = Mathf.Clamp(moneyValue + amount, 0, MAX_MONEY);
         }
 
         public void SubtractMoney(int amount)
         {
-            moneyValue = Mathf.Clamp(moneyValue - amount, 0, maxMoney);
+            moneyValue = Mathf.Clamp(moneyValue - amount, 0, MAX_MONEY);
         }
 
         // --- Sliderを更新するメソッド ---
@@ -76,19 +70,19 @@ namespace Tech.C
         {
             if (gambleSlider != null)
             {
-                gambleSlider.maxValue = maxGamble;
+                gambleSlider.maxValue = MAX_GAMBLE;
                 gambleSlider.value = gambleValue;
             }
 
             if (funSlider != null)
             {
-                funSlider.maxValue = maxFun;
+                funSlider.maxValue = MAX_FUN;
                 funSlider.value = funValue;
             }
 
             if (moneySlider != null)
             {
-                moneySlider.maxValue = maxMoney;
+                moneySlider.maxValue = MAX_MONEY;
                 moneySlider.value = moneyValue;
             }
         }
