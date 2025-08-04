@@ -14,6 +14,45 @@ namespace Tech.C.Item
 
         [Header("ギャンブルアイテムの出現確率（合計100になるように）")]
         public List<GamblingRate> gamblingRates;
+
+        [ContextMenu("全rateを0にする")]
+        public void ResetAllRatesToZero()
+        {
+            if (entertainmentRates != null)
+            {
+                foreach (var rate in entertainmentRates)
+                {
+                    rate.rate = 0;
+                }
+            }
+            if (gamblingRates != null)
+            {
+                foreach (var rate in gamblingRates)
+                {
+                    rate.rate = 0;
+                }
+            }
+        }
+
+        [ContextMenu("全rateを100にする")]
+        public void SetAllRatesToHundred()
+        {
+            if (entertainmentRates != null)
+            {
+                foreach (var rate in entertainmentRates)
+                {
+                    rate.rate = 100;
+                }
+            }
+            if (gamblingRates != null)
+            {
+                foreach (var rate in gamblingRates)
+                {
+                    rate.rate = 100;
+                }
+            }
+        }
+
     }
 
     [System.Serializable]

@@ -23,11 +23,6 @@ namespace Tech.C
         private const int MAX_FUN = 100;
         private const int MAX_MONEY = 100;
 
-        // 増加量
-        [SerializeField] private int addGamble = 10;
-        [SerializeField] private int addFun = 5;
-        [SerializeField] private int addMoney = 15;
-
         private void Update()
         {
             UpdateSliders();

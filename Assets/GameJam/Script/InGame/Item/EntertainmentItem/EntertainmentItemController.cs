@@ -1,5 +1,4 @@
 using UnityEngine;
-using Tech.C.Item;
 using Tech.C.Interface;
 
 namespace Tech.C.Item
@@ -10,6 +9,7 @@ namespace Tech.C.Item
     public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private EntertainmentType entertainmentType;
+        [SerializeField] private GaugeController gaugeController;
         private ItemMoveType moveType;
 
         [SerializeField] private float fallSpeed = 2f;
@@ -79,8 +79,9 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
-                OnCollected();
+                gaugeController.AddFun(10); // 仮の加算量。必要に応じて調整
             }
+            OnCollected();
         }
     }
 }

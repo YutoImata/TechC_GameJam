@@ -9,6 +9,7 @@ namespace Tech.C.Item
     public class GamblingItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private GamblingType gamblingType;
+        [SerializeField] private GaugeController gaugeController;
         private ItemMoveType moveType;
         [SerializeField] private float fallSpeed = 2f;
         private Rigidbody2D rb;
@@ -75,8 +76,9 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Wall"))
+            if (other.CompareTag("Bullet"))
             {
+                gaugeController.AddGamble(10); // 仮の加算量。必要に応じて調整
                 OnCollected();
             }
         }

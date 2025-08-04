@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entertainmentRates:
   - type: 0
-    rate: 50
+    rate: 0
   - type: 1
-    rate: 50
+    rate: 0
   gamblingRates:
   - type: 0
-    rate: 50
+    rate: 15
   - type: 1
-    rate: 50
+    rate: 0
