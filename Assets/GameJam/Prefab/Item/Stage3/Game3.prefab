@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6809641883965129763}
   - component: {fileID: -2871322804671486626}
   m_Layer: 0
-  m_Name: Bed
+  m_Name: Game3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6882585684949341207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.61, y: 2.0057642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5ac2707b103047478e7d22e8adf871e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a364b1a6a3d39474dab9e2f86358e990, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d8f9b3c88caf94a8a46a3b530135cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entertainmentType: 1
+  entertainmentType: 0
   fallSpeed: 2
-  entertainmentValue: 10
+  entertainmentValue: 5
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,11 +185,11 @@ MonoBehaviour:
   useRandomMoveType: 1
   moveTypeWeights:
   - moveType: 0
-    weight: 100
+    weight: 66
   - moveType: 1
-    weight: 100
+    weight: 62
   - moveType: 2
-    weight: 100
+    weight: 9
   fallSpeed: 2
   zigzagDirection: {x: 1, y: 0}
   zigzagAmplitude: 0

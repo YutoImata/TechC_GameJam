@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -1771022072288906325}
   - component: {fileID: -2871322804671486626}
   m_Layer: 0
-  m_Name: Chip
+  m_Name: Chip3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamblingType: 0
-  gambleValueValue: 10
-  fallSpeed: 2
+  gambleValueValue: 18
+  fallSpeed: 4
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0

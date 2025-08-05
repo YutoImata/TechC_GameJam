@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8002931164550501927}
   - component: {fileID: -4934926613328336604}
   - component: {fileID: 7905176432459907112}
-  - component: {fileID: 6809641883965129763}
+  - component: {fileID: -1771022072288906325}
   - component: {fileID: -2871322804671486626}
   m_Layer: 0
-  m_Name: Game
+  m_Name: PlaingCards 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a364b1a6a3d39474dab9e2f86358e990, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a3970c0779503643bcf18ec85db0c03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6809641883965129763
+--- !u!114 &-1771022072288906325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,12 +163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6882585684949341207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d8f9b3c88caf94a8a46a3b530135cc, type: 3}
+  m_Script: {fileID: 11500000, guid: c22d7487502f07d42b2587061c8dbef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entertainmentType: 0
-  fallSpeed: 2
-  entertainmentValue: 10
+  gamblingType: 1
+  gambleValueValue: 7
+  fallSpeed: 5
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,17 +181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358006687e0b24b42946d3010b6f04f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: 1
+  moveType: 0
   useRandomMoveType: 1
   moveTypeWeights:
   - moveType: 0
-    weight: 100
+    weight: 94
   - moveType: 1
-    weight: 100
+    weight: 36
   - moveType: 2
-    weight: 100
+    weight: 0
   fallSpeed: 2
   zigzagDirection: {x: 1, y: 0}
-  zigzagAmplitude: 0
-  zigzagFrequency: 10
+  zigzagAmplitude: 1.5
+  zigzagFrequency: 2
   playerObject: {fileID: 2074521694677656342, guid: 4276adfadebf9454a839163ff59032b6, type: 3}
