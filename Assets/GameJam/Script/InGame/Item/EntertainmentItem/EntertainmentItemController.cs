@@ -82,13 +82,11 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"Entertainment衝突: {other.tag}");
             if (other.CompareTag("Bullet"))
             {
-                Debug.Log("弾に当たりました - Entertainment加算");
                 GaugeController.I.AddEntertainment(entertainmentValue);
+                OnCollected(); // 弾に当たった場合はPoolに返却
             }
-            OnCollected();
         }
 
         public void SetFallSpeed(float speed)

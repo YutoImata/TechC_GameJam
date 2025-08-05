@@ -25,5 +25,18 @@ namespace Tech.C.Bullet
                 bulletController.ReturnToPool();
             }
         }
+
+        /// <summary>
+        /// アイテムに当たったときにPoolへ返却
+        /// </summary>
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            // アイテムのコンポーネントを確認して弾を返却
+            if (other.gameObject.GetComponent<Item.EntertainmentItemController>() != null ||
+                other.gameObject.GetComponent<Item.GamblingItemController>() != null)
+            {
+                bulletController.ReturnToPool();
+            }
+        }
     }
 }

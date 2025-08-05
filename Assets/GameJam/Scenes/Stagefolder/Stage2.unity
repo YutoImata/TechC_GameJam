@@ -127,7 +127,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 319286334637982524, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+    - target: {fileID: 1097822273505913617, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -175,7 +175,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
-    - target: {fileID: 3804331047097759431, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+    - target: {fileID: 5349513668813482769, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

@@ -38,7 +38,9 @@ namespace Tech.C.Player
         {
             if (context.performed)
             {
-                BulletManager.I.SpawnBullet(bulletType, transform.position);
+                // Playerの少し上から弾を生成することで、Playerのコライダーとの干渉を防ぐ
+                Vector3 bulletSpawnPosition = transform.position + Vector3.up * 0.5f;
+                BulletManager.I.SpawnBullet(bulletType, bulletSpawnPosition);
             }
         }
 
@@ -52,7 +54,8 @@ namespace Tech.C.Player
         /// </summary>
         private void MovePlayer()
         {
-            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+            Vector2 targetVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = targetVelocity;
             SetAnimationByDirection();
         }
 
