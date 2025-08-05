@@ -30,7 +30,35 @@ namespace Tech.C
             if (entertainmentSlider != null)
             {
                 entertainmentSlider.maxValue = MAX_ENTERTAINMENT;
+                entertainmentSlider.value = 0;
+            }
+        }
+
+        private void UpdateGambleUI()
+        {
+            Debug.Log($"UpdateGambleUI: gambleSlider={gambleSlider}, gambleValue={gambleValue}");
+            if (gambleSlider != null)
+            {
+                gambleSlider.value = gambleValue;
+                Debug.Log($"Slider更新完了: value={gambleSlider.value}");
+            }
+            else
+            {
+                Debug.LogError("gambleSlider が null です！");
+            }
+        }
+
+        private void UpdateEntertainmentUI()
+        {
+            Debug.Log($"UpdateEntertainmentUI: entertainmentSlider={entertainmentSlider}, entertainmentValue={entertainmentValue}");
+            if (entertainmentSlider != null)
+            {
                 entertainmentSlider.value = entertainmentValue;
+                Debug.Log($"Slider更新完了: value={entertainmentSlider.value}");
+            }
+            else
+            {
+                Debug.LogError("entertainmentSlider が null です！");
             }
         }
 

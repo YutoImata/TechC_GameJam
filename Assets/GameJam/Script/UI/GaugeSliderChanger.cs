@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Gauge : MonoBehaviour
+public class GaugeSliderChanger : MonoBehaviour
 {
     // Inspectorから設定できるようにPublicでSliderコンポーネントを定義
     public Slider gaugeSlider;
