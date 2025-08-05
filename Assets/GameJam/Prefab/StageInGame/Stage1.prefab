@@ -969,9 +969,9 @@ MonoBehaviour:
   itemSpawner:
     spawnLeft: {fileID: 4634760811927122412}
     spawnRight: {fileID: 2176106120341427651}
-  spawnInterval: 2
+  spawnInterval: 0.1
   defaultFallSpeed: 2
-  useRandomFallSpeed: 0
+  useRandomFallSpeed: 1
   minFallSpeed: 2
   maxFallSpeed: 6
   itemFactory: {fileID: 6514815756015451814}
@@ -1242,7 +1242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4634760811927122412
 Transform:
   m_ObjectHideFlags: 0
@@ -1252,7 +1252,7 @@ Transform:
   m_GameObject: {fileID: 4217190746077985917}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6618972, y: 2.5598392, z: 0.086677805}
+  m_LocalPosition: {x: 1, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1698,7 +1698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2176106120341427651
 Transform:
   m_ObjectHideFlags: 0
@@ -1708,7 +1708,7 @@ Transform:
   m_GameObject: {fileID: 5060568187253860494}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.1381035, y: 2.5598392, z: 0.086677805}
+  m_LocalPosition: {x: 13, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2088,7 +2088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1972898855640182295
 Transform:
   m_ObjectHideFlags: 0
@@ -2180,6 +2180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8063490334759364728}
   - component: {fileID: 2529130478374582239}
+  - component: {fileID: 1858141720166532432}
   m_Layer: 0
   m_Name: GaugeController
   m_TagString: Untagged
@@ -2212,6 +2213,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d98906ed3235e8e4ea83f97c0ad1cd20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gambleSlider: {fileID: 5054072866877379683}
+  entertainmentSlider: {fileID: 3893576216968507038}
+--- !u!114 &1858141720166532432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381047306801081419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed9cc8d9fe6ccfa489e0392d3a5edf07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gambleSlider: {fileID: 5054072866877379683}
@@ -2614,7 +2629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3933467457977701626, guid: ecef35966f39da248871cd002fc56932, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.66
+      value: 6.87
       objectReference: {fileID: 0}
     - target: {fileID: 3933467457977701626, guid: ecef35966f39da248871cd002fc56932, type: 3}
       propertyPath: m_LocalPosition.z
