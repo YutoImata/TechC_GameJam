@@ -89,8 +89,6 @@ namespace Tech.C.Item
             {
                 Debug.Log("弾に当たりました - Gambling加算");
                 GaugeController.I.AddGamble(gambleValueValue);
-                // 弾に当たっても即座に返却せず、Wallに当たるまで待つ
-                return;
             }
             OnCollected();
         }

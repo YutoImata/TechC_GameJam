@@ -87,8 +87,6 @@ namespace Tech.C.Item
             {
                 Debug.Log("弾に当たりました - Entertainment加算");
                 GaugeController.I.AddEntertainment(entertainmentValue);
-                // 弾に当たっても即座に返却せず、Wallに当たるまで待つ
-                return;
             }
             OnCollected();
         }
