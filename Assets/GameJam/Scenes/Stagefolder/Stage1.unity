@@ -167,14 +167,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3361599916390266363, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-      propertyPath: gambleSlider
-      value: 
-      objectReference: {fileID: 2019012700}
-    - target: {fileID: 3361599916390266363, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-      propertyPath: entertainmentSlider
-      value: 
-      objectReference: {fileID: 933378120}
     - target: {fileID: 3379212620694617347, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: m_Name
       value: Stage1
@@ -187,33 +179,28 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-      propertyPath: poolSets.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: b92a613c9be55794b974cc98a6cc3819, type: 3}
-    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-      propertyPath: poolSets.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: b22e6323dce6e9447b40aad1843a736d, type: 3}
-    m_RemovedComponents:
-    - {fileID: 8161371367745853829, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-    - {fileID: 7768821541311976942, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-    - {fileID: 3361599916390266363, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 3029383286805740690, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
-    - {fileID: 2139340359329500488, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+    - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: spawnInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: useRandomFallSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7381047306801081419, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 865597229}
+      addedObject: {fileID: 865597231}
   m_SourcePrefab: {fileID: 100100000, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
 --- !u!1 &865597227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7381047306801081419, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
   m_PrefabInstance: {fileID: 21554658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &865597229
+--- !u!114 &865597231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,7 +209,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 865597227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d98906ed3235e8e4ea83f97c0ad1cd20, type: 3}
+  m_Script: {fileID: 11500000, guid: ed9cc8d9fe6ccfa489e0392d3a5edf07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gambleSlider: {fileID: 2019012700}
