@@ -85,8 +85,8 @@ namespace Tech.C.Item
             if (other.CompareTag("Bullet"))
             {
                 GaugeController.I.AddEntertainment(entertainmentValue);
+                OnCollected(); // 弾に当たった場合はPoolに返却
             }
-            OnCollected();
         }
 
         public void SetFallSpeed(float speed)
