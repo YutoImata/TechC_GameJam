@@ -5,7 +5,7 @@ namespace Tech.C.Item
     public class ItemMover : MonoBehaviour
     {
         [SerializeField] private ItemMoveType moveType;
-        [SerializeField] private float fallSpeed = 2f;
+        public float fallSpeed = 2f;
 
         /// <summary>
         /// アイテムを動かす処理

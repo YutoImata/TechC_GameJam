@@ -15,8 +15,6 @@ namespace Tech.C.Item
         [SerializeField] private float fallSpeed = 2f;
         [SerializeField] private int entertainmentValue = 10;
 
-
-
         private Rigidbody2D rb;
 
         private ItemPool itemPool;
@@ -83,6 +81,11 @@ namespace Tech.C.Item
                 GaugeController.I.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
             }
             OnCollected();
+        }
+
+        public void SetFallSpeed(float speed)
+        {
+            fallSpeed = speed;
         }
     }
 }

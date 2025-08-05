@@ -13,9 +13,15 @@ namespace Tech.C.Item
         
         [Header("生成する間隔")]
         [SerializeField] private float spawnInterval = 2f;
+        [Header("アイテム落下速度ランダム設定")]
+        [SerializeField] private float defaultFallSpeed = 2f;
+        [SerializeField] private bool useRandomFallSpeed = false;
+        [SerializeField] private float minFallSpeed = 2f;
+        [SerializeField] private float maxFallSpeed = 6f;
 
         [Header("Factory参照")]
         [SerializeField] private ItemFactory itemFactory;
+
 
         private float timer;
         private bool isSpawning = false;
@@ -52,9 +58,36 @@ namespace Tech.C.Item
             {
                 Vector3 spawnPos = itemSpawner.GetRandomSpawnPosition();
                 GameObject item = itemFactory.GetRandomItem(spawnPos);
-                var mover = item.GetComponent<ItemMover>();
-                mover.MoveItem();
+
+                // 娯楽アイテム
+                var entertainmentCtrl = item.GetComponent<EntertainmentItemController>();
+                if (entertainmentCtrl != null)
+                {
+                    entertainmentCtrl.SetFallSpeed(GetFallSpeed());
+                }
+
+                // ギャンブルアイテム
+                var gamblingCtrl = item.GetComponent<GamblingItemController>();
+                if (gamblingCtrl != null)
+                {
+                    gamblingCtrl.SetFallSpeed(GetFallSpeed());
+                }
             }
+        }
+
+        // アイテム生成時に呼び出す例
+        public void SetupItemMover(ItemMover mover)
+        {
+            if (useRandomFallSpeed)
+            {
+                mover.fallSpeed = Random.Range(minFallSpeed, maxFallSpeed);
+            }
+            // useRandomFallSpeedがfalseならPrefabの値をそのまま使う
+        }
+
+        public float GetFallSpeed()
+        {
+            return useRandomFallSpeed ? Random.Range(minFallSpeed, maxFallSpeed) : defaultFallSpeed;
         }
     }
 }
