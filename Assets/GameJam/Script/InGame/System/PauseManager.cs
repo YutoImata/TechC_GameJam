@@ -1,4 +1,5 @@
 using UnityEngine;
+using Tech.C.UI;
 
 namespace Tech.C.System
 {
@@ -11,7 +12,7 @@ namespace Tech.C.System
         [SerializeField] private bool canPause = true; // ポーズ可能かどうか
         
         [Header("ポーズUI")]
-        [SerializeField] private GameObject pauseUI; // ポーズ時に表示するUI
+        [SerializeField] private PauseUI pauseUI; // ポーズUI管理クラス
         
         private bool isPaused = false;
         private float originalTimeScale = 1f;
@@ -39,7 +40,7 @@ namespace Tech.C.System
             // ポーズUIは最初は非表示
             if (pauseUI != null)
             {
-                pauseUI.SetActive(false);
+                pauseUI.HidePauseUI();
             }
         }
         
@@ -73,7 +74,7 @@ namespace Tech.C.System
             // ポーズUIを表示
             if (pauseUI != null)
             {
-                pauseUI.SetActive(true);
+                pauseUI.ShowPauseUI();
             }
         }
         
@@ -90,7 +91,7 @@ namespace Tech.C.System
             // ポーズUIを非表示
             if (pauseUI != null)
             {
-                pauseUI.SetActive(false);
+                pauseUI.HidePauseUI();
             }
         }
     }
