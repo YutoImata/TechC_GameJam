@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 929079466}
   - component: {fileID: 929079465}
   m_Layer: 5
-  m_Name: Takasi=Dogeza
+  m_Name: Takasi_Dogeza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

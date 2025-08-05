@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &922929513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3893576216968507038, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+  m_PrefabInstance: {fileID: 2056049604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2056049604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +178,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3361599916390266363, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: gambleSlider
+      value: 
+      objectReference: {fileID: 2056049605}
+    - target: {fileID: 3361599916390266363, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: entertainmentSlider
+      value: 
+      objectReference: {fileID: 922929513}
     - target: {fileID: 3379212620694617347, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: m_Name
       value: Stage1
@@ -184,6 +203,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+--- !u!114 &2056049605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5054072866877379683, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+  m_PrefabInstance: {fileID: 2056049604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

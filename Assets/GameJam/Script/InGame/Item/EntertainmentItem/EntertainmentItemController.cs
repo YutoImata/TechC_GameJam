@@ -82,9 +82,13 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
+            Debug.Log($"Entertainment衝突: {other.tag}");
             if (other.CompareTag("Bullet"))
             {
-                GaugeController.I.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
+                Debug.Log("弾に当たりました - Entertainment加算");
+                GaugeController.I.AddEntertainment(entertainmentValue);
+                // 弾に当たっても即座に返却せず、Wallに当たるまで待つ
+                return;
             }
             OnCollected();
         }
