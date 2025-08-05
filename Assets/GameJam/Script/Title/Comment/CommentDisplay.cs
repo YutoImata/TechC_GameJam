@@ -52,7 +52,7 @@ namespace Tech.C
         /// ランダムコメントを生成・表示
         /// </summary>
         private const float INIT_FONT_SIZE = 36f;
-        private static readonly Color INIT_COLOR = Color.white;
+        private static readonly Color INIT_COLOR = Color.red;
         private const float INIT_SPEED = 100f;
         private const float INIT_ACCEL = 50f;
         private const float INIT_FADE_START = 1.0f;
