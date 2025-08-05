@@ -84,10 +84,8 @@ namespace Tech.C.Item
         // 弾との衝突判定
         void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log($"Gambling衝突: {other.tag}");
             if (other.CompareTag("Bullet"))
             {
-                Debug.Log("弾に当たりました - Gambling加算");
                 GaugeController.I.AddGamble(gambleValueValue);
             }
             OnCollected();
