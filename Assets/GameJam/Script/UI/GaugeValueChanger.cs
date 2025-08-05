@@ -1,21 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GaugeSliderChanger : MonoBehaviour
+public class GaugeValueChanger : MonoBehaviour
 {
-    // Inspectorから設定できるようにPublicでSliderコンポーネントを定義
-    public Slider gaugeSlider;
+    [SerializeField] private Slider gaugeSlider;
+    [SerializeField] private Image fillImage;
 
-    // ゲージの塗りつぶし部分のImageコンポーネントを定義
-    public Image fillImage;
-
-    // Start関数でゲージの値が変わったときに呼び出されるメソッドを登録
     void Start()
     {
-        // もしgaugeSliderが設定されていれば、イベントリスナーを追加
         if (gaugeSlider != null)
         {
-            // スライダーの値が変更されたときにOnValueChangedメソッドを呼び出すように設定
             gaugeSlider.onValueChanged.AddListener(OnValueChanged);
         }
     }

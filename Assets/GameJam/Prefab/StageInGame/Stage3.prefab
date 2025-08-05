@@ -251,6 +251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8063490334759364728}
   - {fileID: 7406533447037186519}
   - {fileID: 3714848590867773625}
   - {fileID: 153743413105256068}
@@ -1019,6 +1020,10 @@ MonoBehaviour:
     spawnLeft: {fileID: 4634760811927122412}
     spawnRight: {fileID: 2176106120341427651}
   spawnInterval: 2
+  defaultFallSpeed: 2
+  useRandomFallSpeed: 0
+  minFallSpeed: 2
+  maxFallSpeed: 6
   itemFactory: {fileID: 6514815756015451814}
 --- !u!1 &3631818375810382608
 GameObject:
@@ -2780,11 +2785,11 @@ Transform:
   m_GameObject: {fileID: 7381047306801081419}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.4528, y: 177.26872, z: -2.24724}
+  m_LocalPosition: {x: 98.6147, y: 180.31775, z: -2.3339157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5290832492123893657}
+  m_Father: {fileID: 7552568350116443375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3361599916390266363
 MonoBehaviour:
@@ -3003,7 +3008,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3969960709160242214}
-  - {fileID: 8063490334759364728}
   - {fileID: 6823100175573156014}
   - {fileID: 4769885723703244407}
   - {fileID: 6345206944427428944}
