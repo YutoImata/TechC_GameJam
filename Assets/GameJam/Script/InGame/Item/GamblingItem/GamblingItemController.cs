@@ -21,6 +21,7 @@ namespace Tech.C.Item
         private int poolIndex;
 
         private ItemMoveType moveType;
+        private ItemMover mover;
         /// <summary>
         /// 外部からタイプをセットする
         /// </summary>
@@ -36,6 +37,11 @@ namespace Tech.C.Item
             poolIndex = index;
         }
 
+        void Awake()
+        {
+            mover = GetComponent<ItemMover>();
+        }
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -43,7 +49,7 @@ namespace Tech.C.Item
 
         void Update()
         {
-            Fall();
+            mover.MoveItem();
         }
 
         public void Fall()
@@ -51,7 +57,6 @@ namespace Tech.C.Item
             if (rb != null)
                 rb.linearVelocity = new Vector2(0, -fallSpeed);
         }
-
 
         // アイテムをPoolに返却
         public void ReturnToPool()
@@ -84,6 +89,11 @@ namespace Tech.C.Item
                 GaugeController.I.AddGamble(gambleValueValue); // 仮の加算量。必要に応じて調整
             }
             OnCollected();
+        }
+
+        public void SetFallSpeed(float speed)
+        {
+            fallSpeed = speed;
         }
     }
 }

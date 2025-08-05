@@ -599,6 +599,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: spawnInterval
       value: 1.6
@@ -835,3 +836,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 885515361}
+  - {fileID: 1350940930}
