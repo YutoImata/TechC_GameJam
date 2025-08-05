@@ -182,6 +182,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: 0
+  useRandomMoveType: 1
+  moveTypeWeights:
+  - moveType: 0
+    weight: 100
+  - moveType: 1
+    weight: 100
+  - moveType: 2
+    weight: 100
   fallSpeed: 2
   zigzagDirection: {x: 1, y: 0}
   zigzagAmplitude: 1.5

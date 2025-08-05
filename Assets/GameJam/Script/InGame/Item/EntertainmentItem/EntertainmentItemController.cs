@@ -9,7 +9,6 @@ namespace Tech.C.Item
     public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private EntertainmentType entertainmentType;
-        private ItemMoveType moveType;
 
         [Header("設定")]
         [SerializeField] private float fallSpeed = 2f;
