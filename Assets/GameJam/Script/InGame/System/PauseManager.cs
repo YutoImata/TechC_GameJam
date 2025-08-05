@@ -44,6 +44,19 @@ namespace Tech.C.System
             }
         }
         
+        // 一時的にコメントアウト（GameInputHandlerで処理）
+        /*
+        private void Update()
+        {
+            // ESCキーでポーズ切り替え（Time.timeScale = 0でも動作）
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Debug.Log("[PauseManager] Update内でESCキー検出");
+                TogglePause();
+            }
+        }
+        */
+        
         /// <summary>
         /// ポーズの切り替え（Input System用）
         /// </summary>
@@ -60,7 +73,13 @@ namespace Tech.C.System
         /// </summary>
         public void TogglePause()
         {
-            if (!canPause) return;
+            if (!canPause) 
+            {
+                Debug.Log("[PauseManager] ポーズが無効になっています");
+                return;
+            }
+            
+            Debug.Log($"[PauseManager] ポーズ切り替え実行 - 現在の状態: {(isPaused ? "ポーズ中" : "再生中")}");
             
             if (isPaused)
             {
@@ -77,18 +96,27 @@ namespace Tech.C.System
         /// </summary>
         public void Pause()
         {
-            if (!canPause || isPaused) return;
+            if (!canPause || isPaused) 
+            {
+                Debug.Log($"[PauseManager] ポーズ実行をスキップ - canPause: {canPause}, isPaused: {isPaused}");
+                return;
+            }
             
             isPaused = true;
             Time.timeScale = 0f;
+            
+            Debug.Log($"[PauseManager] ゲームをポーズしました - Time.timeScale: {Time.timeScale}");
             
             // ポーズUIを表示
             if (pauseUI != null)
             {
                 pauseUI.SetActive(true);
+                Debug.Log("[PauseManager] ポーズUIを表示しました");
             }
-            
-            Debug.Log("Game Paused");
+            else
+            {
+                Debug.LogWarning("[PauseManager] ポーズUIが設定されていません");
+            }
         }
         
         /// <summary>
@@ -96,18 +124,23 @@ namespace Tech.C.System
         /// </summary>
         public void Resume()
         {
-            if (!isPaused) return;
+            if (!isPaused) 
+            {
+                Debug.Log("[PauseManager] 既にポーズが解除されています");
+                return;
+            }
             
             isPaused = false;
             Time.timeScale = originalTimeScale;
+            
+            Debug.Log($"[PauseManager] ポーズを解除しました - Time.timeScale: {Time.timeScale}");
             
             // ポーズUIを非表示
             if (pauseUI != null)
             {
                 pauseUI.SetActive(false);
+                Debug.Log("[PauseManager] ポーズUIを非表示にしました");
             }
-            
-            Debug.Log("Game Resumed");
         }
         
         /// <summary>

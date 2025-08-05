@@ -22,23 +22,25 @@ namespace Tech.C.Player
             rb = GetComponent<Rigidbody2D>();
             animCtrl = GetComponent<PlayerAnimationController>();
         }
-        
+
         private void Update()
         {
             // PauseManagerの状態をチェック
             if (Tech.C.System.PauseManager.I != null)
             {
                 bool pauseManagerPaused = Tech.C.System.PauseManager.I.IsPaused;
-                
+
                 // ポーズ状態が変わった場合
                 if (isPaused != pauseManagerPaused)
                 {
                     if (pauseManagerPaused)
                     {
+                        Debug.Log("[PlayerController] ポーズ状態に変更");
                         OnPause();
                     }
                     else
                     {
+                        Debug.Log("[PlayerController] ポーズ解除状態に変更");
                         OnResume();
                     }
                     isPaused = pauseManagerPaused;
@@ -53,7 +55,11 @@ namespace Tech.C.Player
         public void OnMove(InputAction.CallbackContext context)
         {
             // ポーズ中は入力を無視
-            if (isPaused) return;
+            if (isPaused) 
+            {
+                Debug.Log("[PlayerController] ポーズ中のため移動入力を無視");
+                return;
+            }
             
             // 横方向のみ取得
             float x = context.ReadValue<Vector2>().x;
@@ -64,7 +70,11 @@ namespace Tech.C.Player
         public void OnFire(InputAction.CallbackContext context)
         {
             // ポーズ中は入力を無視
-            if (isPaused) return;
+            if (isPaused) 
+            {
+                Debug.Log("[PlayerController] ポーズ中のため射撃入力を無視");
+                return;
+            }
             
             if (context.performed)
             {
@@ -73,17 +83,6 @@ namespace Tech.C.Player
                 BulletManager.I.SpawnBullet(bulletType, bulletSpawnPosition);
             }
         }
-
-        public void OnPause(InputAction.CallbackContext context)
-{
-    if (context.performed)
-    {
-        if (PauseManager.I != null)
-        {
-            PauseManager.I.TogglePause();
-        }
-    }
-}
 
         void FixedUpdate()
         {
@@ -126,7 +125,7 @@ namespace Tech.C.Player
 
             lastMoveX = moveInput.x;
         }
-        
+
         // IPausableインターフェースの実装
         public void OnPause()
         {
@@ -138,12 +137,12 @@ namespace Tech.C.Player
             }
             moveInput = Vector2.zero;
         }
-        
+
         public void OnResume()
         {
             isPaused = false;
         }
-        
+
         public bool IsPaused => isPaused;
     }
 }

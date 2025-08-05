@@ -35,7 +35,10 @@ namespace Tech.C.Item
         void Update()
         {
             // ポーズ中はアイテム生成を停止
-            if (isPaused) return;
+            if (isPaused) 
+            {
+                return;
+            }
             
             timer += Time.deltaTime;
             if (timer >= spawnInterval)
@@ -98,11 +101,13 @@ namespace Tech.C.Item
         public void OnPause()
         {
             isPaused = true;
+            Debug.Log("[ItemManager] アイテム生成をポーズしました");
         }
         
         public void OnResume()
         {
             isPaused = false;
+            Debug.Log("[ItemManager] アイテム生成のポーズを解除しました");
         }
         
         public bool IsPaused => isPaused;
