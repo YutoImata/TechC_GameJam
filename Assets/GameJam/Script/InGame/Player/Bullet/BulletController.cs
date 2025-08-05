@@ -41,7 +41,28 @@ namespace Tech.C.Bullet
         {
             this.type = type;
             timer = 0f;
-            rb.linearVelocity = direction.normalized * speed;
+            
+            // Playerの移動速度の影響を受けないよう、速度を完全にリセットしてから設定
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero; // まず速度をゼロにリセット
+                rb.angularVelocity = 0f; // 回転速度もリセット
+                
+                // 1フレーム待ってから速度を設定（物理的相互作用を防ぐため）
+                StartCoroutine(SetVelocityNextFrame(direction.normalized * speed));
+            }
+        }
+        
+        /// <summary>
+        /// 次のフレームで速度を設定する（物理的相互作用を避けるため）
+        /// </summary>
+        private System.Collections.IEnumerator SetVelocityNextFrame(Vector2 velocity)
+        {
+            yield return null; // 1フレーム待機
+            if (rb != null)
+            {
+                rb.linearVelocity = velocity;
+            }
         }
 
         public void ReturnToPool()

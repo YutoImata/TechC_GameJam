@@ -51,27 +51,32 @@ namespace Tech.C
             Vector2 playerPos = playerCollider.transform.position;
             Vector2 sliderPos = transform.position;
             
-            // プレイヤーからSliderへの方向を計算
-            Vector2 direction = (playerPos - sliderPos).normalized;
+            // SliderのBoxCollider2Dのサイズを取得
+            BoxCollider2D sliderCollider = GetComponent<BoxCollider2D>();
+            if (sliderCollider == null) return;
             
-            // 方向がゼロの場合はデフォルトで左に押し出す
-            if (direction.magnitude < 0.1f)
-            {
-                direction = Vector2.left;
-            }
+            // Slider領域の境界を計算
+            Vector2 sliderSize = sliderCollider.size;
+            Vector2 sliderMin = sliderPos - sliderSize * 0.5f;
+            Vector2 sliderMax = sliderPos + sliderSize * 0.5f;
             
             // プレイヤーのRigidbody2Dを取得
             Rigidbody2D playerRb = playerCollider.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
-                // Velocityを使って押し出す
-                playerRb.linearVelocity = direction * pushBackForce;
-            }
-            else
-            {
-                // Rigidbody2Dがない場合はTransformで直接移動
-                Vector2 pushDistance = direction * pushBackForce * Time.deltaTime;
-                playerCollider.transform.Translate(pushDistance);
+                Vector2 currentVelocity = playerRb.linearVelocity;
+                
+                // Playerが境界を超えようとしている場合のみ制限
+                if (playerPos.x < sliderMin.x && currentVelocity.x > 0) // 左境界を右に移動しようとしている
+                {
+                    // X方向の速度をキャンセル
+                    playerRb.linearVelocity = new Vector2(0, currentVelocity.y);
+                }
+                else if (playerPos.x > sliderMax.x && currentVelocity.x < 0) // 右境界を左に移動しようとしている
+                {
+                    // X方向の速度をキャンセル
+                    playerRb.linearVelocity = new Vector2(0, currentVelocity.y);
+                }
             }
         }
 
