@@ -189,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: maxFallSpeed
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: spawnInterval
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: useRandomFallSpeed
