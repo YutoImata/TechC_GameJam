@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Tech.C
 {
@@ -38,6 +39,7 @@ namespace Tech.C
             gambleValue = Mathf.Clamp(gambleValue + amount, 0, MAX_GAMBLE);
             if (gambleValue >= MAX_GAMBLE)
             {
+                PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene("BadEnd");
             }
         }
@@ -47,6 +49,7 @@ namespace Tech.C
             entertainmentValue = Mathf.Clamp(entertainmentValue + amount, 0, MAX_ENTERTAINMENT);
             if (entertainmentValue >= MAX_ENTERTAINMENT)
             {
+                PlayerPrefs.SetString("lastPlayedScene", SceneManager.GetActiveScene().name);
                 SceneController.I.LoadScene("GoodEnd");
             }
         }
