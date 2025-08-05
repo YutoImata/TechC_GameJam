@@ -1,8 +1,9 @@
-using UnityEngine;
+using UnityEngine;  
+using System;
 
 namespace Tech.C
 {
-    [System.Serializable]
+    [Serializable]
     public class CommentRandomSelector
     {
         [Header("コメントデータ(SO)")]
@@ -15,7 +16,7 @@ namespace Tech.C
         {
             if (commentData == null || commentData.comments == null || commentData.comments.Count == 0)
                 return string.Empty;
-            int idx = Random.Range(0, commentData.comments.Count);
+            int idx = UnityEngine.Random.Range(0, commentData.comments.Count);
             return commentData.comments[idx];
         }
     }

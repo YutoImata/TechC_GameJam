@@ -1,10 +1,11 @@
 using UnityEngine;
+using System;
 
 namespace Tech.C
 {
     public enum AudioType { BGM, SE }
 
-    [System.Serializable]
+    [Serializable]
     public class AudioInfo
     {
         public string name;

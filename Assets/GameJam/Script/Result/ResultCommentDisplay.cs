@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro; // TextMeshProUGUIを使用するために追加
+using System.Collections;
 
 namespace Tech.C
 {
@@ -69,7 +70,7 @@ namespace Tech.C
         /// <summary>
         /// タイプライター効果のコルーチン
         /// </summary>
-        private System.Collections.IEnumerator TypewriterCoroutine()
+        private IEnumerator TypewriterCoroutine()
         {
             for (int i = 0; i <= fullText.Length; i++)
             {

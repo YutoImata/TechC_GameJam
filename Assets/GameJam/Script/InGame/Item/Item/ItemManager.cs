@@ -25,6 +25,7 @@ namespace Tech.C.Item
 
         private float timer;
         private bool isSpawning = false;
+        private bool isPaused = false;
 
         void Start()
         {
@@ -33,6 +34,9 @@ namespace Tech.C.Item
 
         void Update()
         {
+            // ポーズ中はアイテム生成を停止
+            if (isPaused) return;
+            
             timer += Time.deltaTime;
             if (timer >= spawnInterval)
             {
@@ -89,5 +93,18 @@ namespace Tech.C.Item
         {
             return useRandomFallSpeed ? Random.Range(minFallSpeed, maxFallSpeed) : defaultFallSpeed;
         }
+        
+        // ポーズ機能
+        public void OnPause()
+        {
+            isPaused = true;
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+        }
+        
+        public bool IsPaused => isPaused;
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace Tech.C.Item
 {
@@ -29,7 +30,7 @@ namespace Tech.C.Item
                 int totalWeight = 0;
                 foreach (var w in moveTypeWeights) totalWeight += w.weight;
                 
-                int rand = Random.Range(0, totalWeight);
+                int rand = UnityEngine.Random.Range(0, totalWeight);
                 int sum = 0;
                 foreach (var w in moveTypeWeights)
                 {
@@ -75,7 +76,7 @@ namespace Tech.C.Item
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     public class MoveTypeWeight
     {
         public ItemMoveType moveType;

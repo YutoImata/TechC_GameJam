@@ -1,6 +1,7 @@
 // TextListEditorWindow.cs
 using UnityEngine;
 using UnityEditor;
+using System;
 
 namespace Tech.C
 {
@@ -52,7 +53,7 @@ namespace Tech.C
             }
 
             // テキストを行ごとに分割
-            string[] newLines = inputText.Split(new[] { '\n', '\r' }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] newLines = inputText.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
             // SOに追加
             foreach (var line in newLines)

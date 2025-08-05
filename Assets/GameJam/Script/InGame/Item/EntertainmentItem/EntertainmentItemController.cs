@@ -20,6 +20,7 @@ namespace Tech.C.Item
         private int poolIndex;
 
         private ItemMover mover;
+        private bool isPaused = false;
 
         void Awake()
         {
@@ -33,7 +34,38 @@ namespace Tech.C.Item
 
         void Update()
         {
-            mover.MoveItem();
+            // ポーズ状態をチェック
+            CheckPauseState();
+            
+            // ポーズ中でなければ移動処理
+            if (!isPaused)
+            {
+                mover.MoveItem();
+            }
+        }
+        
+        /// <summary>
+        /// ポーズ状態をチェックして更新
+        /// </summary>
+        private void CheckPauseState()
+        {
+            if (Tech.C.System.PauseManager.I != null)
+            {
+                bool pauseManagerPaused = Tech.C.System.PauseManager.I.IsPaused;
+                
+                if (isPaused != pauseManagerPaused)
+                {
+                    if (pauseManagerPaused)
+                    {
+                        OnPause();
+                    }
+                    else
+                    {
+                        OnResume();
+                    }
+                    isPaused = pauseManagerPaused;
+                }
+            }
         }
 
         // 毎フレームの落下・移動処理
@@ -93,5 +125,24 @@ namespace Tech.C.Item
         {
             fallSpeed = speed;
         }
+        
+        // ポーズ機能
+        public void OnPause()
+        {
+            isPaused = true;
+            // Rigidbody2Dがある場合は速度を停止
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+            // ポーズ解除時は特に何もしない（MoveItemで自動的に再開）
+        }
+        
+        public bool IsPaused => isPaused;
     }
 }

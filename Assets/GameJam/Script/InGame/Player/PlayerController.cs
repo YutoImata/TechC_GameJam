@@ -15,11 +15,35 @@ namespace Tech.C.Player
         private Rigidbody2D rb;
         private PlayerAnimationController animCtrl;
         private float lastMoveX = 0f;
+        private bool isPaused = false;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animCtrl = GetComponent<PlayerAnimationController>();
+        }
+        
+        private void Update()
+        {
+            // PauseManagerの状態をチェック
+            if (Tech.C.System.PauseManager.I != null)
+            {
+                bool pauseManagerPaused = Tech.C.System.PauseManager.I.IsPaused;
+                
+                // ポーズ状態が変わった場合
+                if (isPaused != pauseManagerPaused)
+                {
+                    if (pauseManagerPaused)
+                    {
+                        OnPause();
+                    }
+                    else
+                    {
+                        OnResume();
+                    }
+                    isPaused = pauseManagerPaused;
+                }
+            }
         }
 
         /// <summary>
@@ -28,6 +52,9 @@ namespace Tech.C.Player
         /// <param name="context"></param>
         public void OnMove(InputAction.CallbackContext context)
         {
+            // ポーズ中は入力を無視
+            if (isPaused) return;
+            
             // 横方向のみ取得
             float x = context.ReadValue<Vector2>().x;
             moveInput = new Vector2(x, 0);
@@ -36,6 +63,9 @@ namespace Tech.C.Player
 
         public void OnFire(InputAction.CallbackContext context)
         {
+            // ポーズ中は入力を無視
+            if (isPaused) return;
+            
             if (context.performed)
             {
                 // Playerの少し上から弾を生成することで、Playerのコライダーとの干渉を防ぐ
@@ -44,9 +74,24 @@ namespace Tech.C.Player
             }
         }
 
+        public void OnPause(InputAction.CallbackContext context)
+{
+    if (context.performed)
+    {
+        if (PauseManager.I != null)
+        {
+            PauseManager.I.TogglePause();
+        }
+    }
+}
+
         void FixedUpdate()
         {
-            MovePlayer();
+            // ポーズ中は移動処理を停止
+            if (!isPaused)
+            {
+                MovePlayer();
+            }
         }
 
         /// <summary>
@@ -81,5 +126,24 @@ namespace Tech.C.Player
 
             lastMoveX = moveInput.x;
         }
+        
+        // IPausableインターフェースの実装
+        public void OnPause()
+        {
+            isPaused = true;
+            // ポーズ時は移動を停止
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+            moveInput = Vector2.zero;
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+        }
+        
+        public bool IsPaused => isPaused;
     }
 }

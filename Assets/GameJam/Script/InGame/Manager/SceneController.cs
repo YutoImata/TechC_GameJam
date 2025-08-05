@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using System.Collections;
 
 namespace Tech.C
 {
@@ -20,7 +22,7 @@ namespace Tech.C
             StartCoroutine(LoadSceneAsyncCoroutine(sceneName));
         }
 
-        private System.Collections.IEnumerator LoadSceneAsyncCoroutine(string sceneName)
+        private IEnumerator LoadSceneAsyncCoroutine(string sceneName)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             while (!asyncLoad.isDone)
