@@ -22,32 +22,60 @@ namespace Tech.C
 
         private void Start()
         {
+            Debug.Log("GaugeController Start() called");
             // 初期化時にSliderの最大値と初期値を設定
             if (gambleSlider != null)
             {
+                Debug.Log($"gambleSlider found: {gambleSlider.name}");
                 gambleSlider.maxValue = MAX_GAMBLE;
                 gambleSlider.value = 0;
+                Debug.Log($"gambleSlider initialized - maxValue: {gambleSlider.maxValue}, value: {gambleSlider.value}");
             }
+            else
+            {
+                Debug.LogError("gambleSlider is null in Start! Check Inspector assignment.");
+            }
+            
             if (entertainmentSlider != null)
             {
+                Debug.Log($"entertainmentSlider found: {entertainmentSlider.name}");
                 entertainmentSlider.maxValue = MAX_ENTERTAINMENT;
                 entertainmentSlider.value = 0;
+                Debug.Log($"entertainmentSlider initialized - maxValue: {entertainmentSlider.maxValue}, value: {entertainmentSlider.value}");
+            }
+            else
+            {
+                Debug.LogError("entertainmentSlider is null in Start! Check Inspector assignment.");
             }
         }
 
         private void UpdateGambleUI()
         {
+            Debug.Log($"UpdateGambleUI called: gambleSlider is null = {gambleSlider == null}");
             if (gambleSlider != null)
             {
+                Debug.Log($"Setting gambleSlider.value from {gambleSlider.value} to {gambleValue}");
                 gambleSlider.value = gambleValue;
+                Debug.Log($"gambleSlider.value after setting: {gambleSlider.value}");
+            }
+            else
+            {
+                Debug.LogError("gambleSlider is null! Check Inspector assignment.");
             }
         }
 
         private void UpdateEntertainmentUI()
         {
+            Debug.Log($"UpdateEntertainmentUI called: entertainmentSlider is null = {entertainmentSlider == null}");
             if (entertainmentSlider != null)
             {
+                Debug.Log($"Setting entertainmentSlider.value from {entertainmentSlider.value} to {entertainmentValue}");
                 entertainmentSlider.value = entertainmentValue;
+                Debug.Log($"entertainmentSlider.value after setting: {entertainmentSlider.value}");
+            }
+            else
+            {
+                Debug.LogError("entertainmentSlider is null! Check Inspector assignment.");
             }
         }
 

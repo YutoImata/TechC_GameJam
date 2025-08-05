@@ -131,18 +131,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 727668261564988704, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 945000519098413317, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1616567799694857053, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3316301877087609423, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04661119
@@ -183,63 +171,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3361599916390266363, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: gambleSlider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3379212620694617347, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_Name
       value: Stage2
       objectReference: {fileID: 0}
-    - target: {fileID: 3406783322608257372, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: poolSets.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 327c809d887a9134398d84790bc6f51c, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: poolSets.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 0798dcf954d75de4ba5a9013eb4ecdc3, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: poolSets.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 2179cbe73656c6e44a2911143ce98bcd, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: poolSets.Array.data[3].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 45b022d5b98c2fc4a8d54156e6d3fc03, type: 3}
-    - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: maxFallSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: spawnInterval
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: useRandomFallSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6514815756015451814, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: spawnRateData
-      value: 
-      objectReference: {fileID: 11400000, guid: a1362dfa99a29024eb2733f53063b9d3, type: 2}
-    - target: {fileID: 7991535206471511772, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258364980522991595, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+    - target: {fileID: 3804331047097759431, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7011423150516590952, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-    - {fileID: 5374575246257360228, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
-    - {fileID: 7526602734991625041, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
