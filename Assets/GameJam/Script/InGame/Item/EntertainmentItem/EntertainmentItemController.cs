@@ -9,18 +9,22 @@ namespace Tech.C.Item
     public class EntertainmentItemController : MonoBehaviour, IFallingItem
     {
         [SerializeField] private EntertainmentType entertainmentType;
-        private ItemMoveType moveType;
 
         [Header("設定")]
         [SerializeField] private float fallSpeed = 2f;
         [SerializeField] private int entertainmentValue = 10;
 
-
-
         private Rigidbody2D rb;
 
         private ItemPool itemPool;
         private int poolIndex;
+
+        private ItemMover mover;
+
+        void Awake()
+        {
+            mover = GetComponent<ItemMover>();
+        }
 
         void Start()
         {
@@ -29,7 +33,7 @@ namespace Tech.C.Item
 
         void Update()
         {
-            Fall();
+            mover.MoveItem();
         }
 
         // 毎フレームの落下・移動処理
@@ -83,6 +87,11 @@ namespace Tech.C.Item
                 GaugeController.I.AddEntertainment(entertainmentValue); // 仮の加算量。必要に応じて調整
             }
             OnCollected();
+        }
+
+        public void SetFallSpeed(float speed)
+        {
+            fallSpeed = speed;
         }
     }
 }

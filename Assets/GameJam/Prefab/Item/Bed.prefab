@@ -181,5 +181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358006687e0b24b42946d3010b6f04f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: 0
+  moveType: 1
+  useRandomMoveType: 1
+  moveTypeWeights:
+  - moveType: 0
+    weight: 100
+  - moveType: 1
+    weight: 100
+  - moveType: 2
+    weight: 100
   fallSpeed: 2
+  zigzagDirection: {x: 1, y: 0}
+  zigzagAmplitude: 0
+  zigzagFrequency: 10
+  playerObject: {fileID: 2074521694677656342, guid: 4276adfadebf9454a839163ff59032b6, type: 3}
