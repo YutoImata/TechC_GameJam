@@ -33,7 +33,6 @@ public class MultiSceneLoadManager : MonoBehaviour
 
                 pair.button.onClick.AddListener(() =>
                 {
-                    Debug.Log($"シーン「{targetScene}」を非同期でロードします");
                     StartCoroutine(LoadSceneAsyncWithUI(targetScene));
                 });
             }
