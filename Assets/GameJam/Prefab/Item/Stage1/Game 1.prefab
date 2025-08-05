@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entertainmentType: 0
-  fallSpeed: 10
-  entertainmentValue: 10
+  fallSpeed: 3
+  entertainmentValue: 5
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,9 +187,9 @@ MonoBehaviour:
   - moveType: 0
     weight: 100
   - moveType: 1
-    weight: 100
+    weight: 31
   - moveType: 2
-    weight: 100
+    weight: 0
   fallSpeed: 2
   zigzagDirection: {x: 1, y: 0}
   zigzagAmplitude: 0

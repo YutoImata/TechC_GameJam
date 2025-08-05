@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamblingType: 1
-  gambleValueValue: 2
-  fallSpeed: 2
+  gambleValueValue: 13
+  fallSpeed: 2.7
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0

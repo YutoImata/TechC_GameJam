@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamblingType: 0
-  gambleValueValue: 10
+  gambleValueValue: 7
   fallSpeed: 2
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
@@ -185,9 +185,9 @@ MonoBehaviour:
   useRandomMoveType: 1
   moveTypeWeights:
   - moveType: 0
-    weight: 100
+    weight: 82
   - moveType: 1
-    weight: 15
+    weight: 29
   - moveType: 2
     weight: 0
   fallSpeed: 2
