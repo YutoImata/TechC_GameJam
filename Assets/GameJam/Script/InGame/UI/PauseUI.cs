@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Tech.C;
 
 namespace Tech.C.UI
 {
@@ -12,12 +13,11 @@ namespace Tech.C.UI
         [Header("UI要素")]
         [SerializeField] private GameObject pausePanel; // ポーズ画面全体のパネル
         [SerializeField] private TextMeshProUGUI pauseText; // "PAUSED"テキスト
-        [SerializeField] private Button resumeButton; // 再開ボタン
-        [SerializeField] private Button settingsButton; // 設定ボタン（オプション）
-        [SerializeField] private Button mainMenuButton; // メインメニューボタン（オプション）
+        [SerializeField] private Button resumeButton; // 再開ボタン（戻る）
+        [SerializeField] private Button retryButton; // リトライボタン
+        [SerializeField] private Button titleButton; // タイトルボタン
         
         [Header("設定")]
-        [SerializeField] private string pauseMessage = "PAUSED"; // ポーズ時のメッセージ
         [SerializeField] private bool showButtons = true; // ボタンを表示するか
         
         private void Start()
@@ -30,12 +30,6 @@ namespace Tech.C.UI
             
             // ボタンのイベント設定
             SetupButtons();
-            
-            // ポーズテキストの設定
-            if (pauseText != null)
-            {
-                pauseText.text = pauseMessage;
-            }
         }
         
         /// <summary>
@@ -49,16 +43,16 @@ namespace Tech.C.UI
                 resumeButton.gameObject.SetActive(showButtons);
             }
             
-            if (settingsButton != null)
+            if (retryButton != null)
             {
-                settingsButton.onClick.AddListener(OnSettingsButtonClicked);
-                settingsButton.gameObject.SetActive(showButtons);
+                retryButton.onClick.AddListener(OnRetryButtonClicked);
+                retryButton.gameObject.SetActive(showButtons);
             }
             
-            if (mainMenuButton != null)
+            if (titleButton != null)
             {
-                mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
-                mainMenuButton.gameObject.SetActive(showButtons);
+                titleButton.onClick.AddListener(OnTitleButtonClicked);
+                titleButton.gameObject.SetActive(showButtons);
             }
         }
         
@@ -85,7 +79,7 @@ namespace Tech.C.UI
         }
         
         /// <summary>
-        /// 再開ボタンがクリックされた時の処理
+        /// 再開ボタン（戻る）がクリックされた時の処理
         /// </summary>
         private void OnResumeButtonClicked()
         {
@@ -96,33 +90,47 @@ namespace Tech.C.UI
         }
         
         /// <summary>
-        /// 設定ボタンがクリックされた時の処理
+        /// リトライボタンがクリックされた時の処理
         /// </summary>
-        private void OnSettingsButtonClicked()
+        private void OnRetryButtonClicked()
         {
-            Debug.Log("Settings button clicked - implement settings menu");
-            // 設定画面を開く処理をここに実装
-        }
-        
-        /// <summary>
-        /// メインメニューボタンがクリックされた時の処理
-        /// </summary>
-        private void OnMainMenuButtonClicked()
-        {
-            Debug.Log("Main menu button clicked - implement scene transition");
-            // メインメニューに戻る処理をここに実装
-            // 例: SceneManager.LoadScene("MainMenu");
-        }
-        
-        /// <summary>
-        /// ポーズメッセージを変更
-        /// </summary>
-        public void SetPauseMessage(string message)
-        {
-            pauseMessage = message;
-            if (pauseText != null)
+            // ポーズを解除してから現在のシーンをリロード
+            if (Tech.C.System.PauseManager.I != null)
             {
-                pauseText.text = message;
+                Tech.C.System.PauseManager.I.Resume();
+            }
+            
+            // RetryManagerを使用してゲームをリスタート
+            RetryManager retryManager = FindFirstObjectByType<RetryManager>();
+            if (retryManager != null)
+            {
+                retryManager.RestartGame();
+            }
+            else
+            {
+                // RetryManagerが見つからない場合は、SceneControllerでリトライ
+                if (SceneController.I != null)
+                {
+                    SceneController.I.RestartCurrentScene();
+                }
+            }
+        }
+        
+        /// <summary>
+        /// タイトルボタンがクリックされた時の処理
+        /// </summary>
+        private void OnTitleButtonClicked()
+        {
+            // ポーズを解除してからタイトルシーンに遷移
+            if (Tech.C.System.PauseManager.I != null)
+            {
+                Tech.C.System.PauseManager.I.Resume();
+            }
+            
+            // タイトルシーンに遷移
+            if (SceneController.I != null)
+            {
+                SceneController.I.LoadScene("Title");
             }
         }
     }
