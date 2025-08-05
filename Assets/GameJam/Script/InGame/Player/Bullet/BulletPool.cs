@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace Tech.C.Bullet
 {
@@ -7,7 +8,7 @@ namespace Tech.C.Bullet
     /// 弾のオブジェクトプール管理クラス
     /// </summary>
 
-    [System.Serializable]
+    [Serializable]
     public class BulletPoolSet
     {
         [Tooltip("弾の種類")]
@@ -34,7 +35,7 @@ namespace Tech.C.Bullet
             foreach (var set in poolSets)
             {
                 set.pool = new ObjectPool<BulletController>(
-                    () => Object.Instantiate(set.prefab, set.parent),
+                    () => UnityEngine.Object.Instantiate(set.prefab, set.parent),
                     set.parent,
                     set.initialSize
                 );

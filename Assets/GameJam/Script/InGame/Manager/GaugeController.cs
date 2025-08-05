@@ -39,12 +39,14 @@ namespace Tech.C
             {
                 gambleSlider.maxValue = MAX_GAMBLE;
                 gambleSlider.value = gambleValue; // 現在の値を反映
+                gambleSlider.interactable = false; // マウス操作を無効化
             }
             
             if (entertainmentSlider != null)
             {
                 entertainmentSlider.maxValue = MAX_ENTERTAINMENT;
                 entertainmentSlider.value = entertainmentValue; // 現在の値を反映
+                entertainmentSlider.interactable = false; // マウス操作を無効化
             }
         }
 
@@ -55,12 +57,14 @@ namespace Tech.C
             {
                 gambleSlider.maxValue = MAX_GAMBLE;
                 gambleSlider.value = 0;
+                gambleSlider.interactable = false; // マウス操作を無効化
             }
             
             if (entertainmentSlider != null)
             {
                 entertainmentSlider.maxValue = MAX_ENTERTAINMENT;
                 entertainmentSlider.value = 0;
+                entertainmentSlider.interactable = false; // マウス操作を無効化
             }
         }
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Tech.C
 {
@@ -8,14 +9,14 @@ namespace Tech.C
     /// </summary>
     public class ObjectPool<T> where T : Component
     {
-        private readonly System.Func<T> createFunc;
+        private readonly Func<T> createFunc;
         private readonly Transform parent;
         private readonly Queue<T> pool = new Queue<T>();
 
         /// <summary>
         /// プールの初期化処理
         /// </summary>
-        public ObjectPool(System.Func<T> createFunc, Transform parent = null, int initialSize = 10)
+        public ObjectPool(Func<T> createFunc, Transform parent = null, int initialSize = 10)
         {
             this.createFunc = createFunc;
             this.parent = parent;

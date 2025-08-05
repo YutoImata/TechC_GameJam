@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace Tech.C.Bullet
 {
@@ -16,6 +17,8 @@ namespace Tech.C.Bullet
         [SerializeField] private float lifeTime = 2f;
         private float timer;
         private Rigidbody2D rb;
+        private bool isPaused = false;
+        private Vector2 pausedVelocity; // ポーズ時に速度を保存
 
         void Awake()
         {
@@ -27,10 +30,14 @@ namespace Tech.C.Bullet
         /// </summary>
         void Update()
         {
-            timer += Time.deltaTime;
-            if (timer >= lifeTime)
+            // ポーズ中は時間経過を停止
+            if (!isPaused)
             {
-                BulletPool.I.ReturnBullet(type, this);
+                timer += Time.deltaTime;
+                if (timer >= lifeTime)
+                {
+                    BulletPool.I.ReturnBullet(type, this);
+                }
             }
         }
 
@@ -56,7 +63,7 @@ namespace Tech.C.Bullet
         /// <summary>
         /// 次のフレームで速度を設定する（物理的相互作用を避けるため）
         /// </summary>
-        private System.Collections.IEnumerator SetVelocityNextFrame(Vector2 velocity)
+        private IEnumerator SetVelocityNextFrame(Vector2 velocity)
         {
             yield return null; // 1フレーム待機
             if (rb != null)
@@ -69,6 +76,28 @@ namespace Tech.C.Bullet
         {
             BulletPool.I.ReturnBullet(type, this);
         }
+        
+        // ポーズ機能
+        public void OnPause()
+        {
+            isPaused = true;
+            if (rb != null)
+            {
+                pausedVelocity = rb.linearVelocity;
+                rb.linearVelocity = Vector2.zero;
+            }
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+            if (rb != null)
+            {
+                rb.linearVelocity = pausedVelocity;
+            }
+        }
+        
+        public bool IsPaused => isPaused;
 
     }
 }

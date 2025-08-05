@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace Tech.C.Item
 {
@@ -55,14 +56,14 @@ namespace Tech.C.Item
 
     }
 
-    [System.Serializable]
+    [Serializable]
     public class EntertainmentRate
     {
         public EntertainmentType type;
         [Range(0, 100)] public int rate;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class GamblingRate
     {
         public GamblingType type;

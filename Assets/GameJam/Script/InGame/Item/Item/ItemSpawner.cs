@@ -1,8 +1,9 @@
 using UnityEngine;
+using System;
 
 namespace Tech.C.Item
 {
-    [System.Serializable]
+    [Serializable]
     public class ItemSpawner
     {
         [Header("生成範囲左端")] public Transform spawnLeft;

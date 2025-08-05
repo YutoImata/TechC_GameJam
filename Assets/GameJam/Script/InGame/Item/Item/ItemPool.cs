@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 namespace Tech.C.Item
 {
     /// <summary>
     /// EntertainmentItem/GamblingItemなどを再利用管理する汎用ItemPool
     /// </summary>
-    [System.Serializable]
+    [Serializable]
     public class ItemPoolSet
     {
         [Tooltip("アイテムPrefab")]

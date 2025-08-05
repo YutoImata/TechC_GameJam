@@ -24,29 +24,27 @@ namespace Tech.C.Item
 
 
         private float timer;
-        private bool isSpawning = false;
+        private bool isPaused = false;
 
         void Start()
         {
-            StartSpawning();
+            // アイテム生成開始
         }
 
         void Update()
         {
+            // ポーズ中はアイテム生成を停止
+            if (isPaused) 
+            {
+                return;
+            }
+            
             timer += Time.deltaTime;
             if (timer >= spawnInterval)
             {
                 SpawnRandomItem();
                 timer = 0f;
             }
-        }
-
-        /// <summary>
-        /// ゲーム開始時に生成開始
-        /// </summary>
-        public void StartSpawning()
-        {
-            isSpawning = true;
         }
 
         /// <summary>
@@ -75,19 +73,22 @@ namespace Tech.C.Item
             }
         }
 
-        // アイテム生成時に呼び出す例
-        public void SetupItemMover(ItemMover mover)
-        {
-            if (useRandomFallSpeed)
-            {
-                mover.fallSpeed = Random.Range(minFallSpeed, maxFallSpeed);
-            }
-            // useRandomFallSpeedがfalseならPrefabの値をそのまま使う
-        }
-
         public float GetFallSpeed()
         {
             return useRandomFallSpeed ? Random.Range(minFallSpeed, maxFallSpeed) : defaultFallSpeed;
         }
+        
+        // ポーズ機能
+        public void OnPause()
+        {
+            isPaused = true;
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+        }
+        
+        public bool IsPaused => isPaused;
     }
 }

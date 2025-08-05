@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using System.Collections;
 
 namespace Tech.C
 {
@@ -15,12 +17,21 @@ namespace Tech.C
             SceneManager.LoadScene(sceneIndex);
         }
 
+        /// <summary>
+        /// 現在のシーンをリロード（リトライ機能）
+        /// </summary>
+        public void RestartCurrentScene()
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
+
         public void LoadSceneAsync(string sceneName)
         {
             StartCoroutine(LoadSceneAsyncCoroutine(sceneName));
         }
 
-        private System.Collections.IEnumerator LoadSceneAsyncCoroutine(string sceneName)
+        private IEnumerator LoadSceneAsyncCoroutine(string sceneName)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
             while (!asyncLoad.isDone)
