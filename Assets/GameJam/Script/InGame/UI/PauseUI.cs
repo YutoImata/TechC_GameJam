@@ -22,11 +22,7 @@ namespace Tech.C.UI
         
         private void Start()
         {
-            // 初期化
-            if (pausePanel != null)
-            {
-                pausePanel.SetActive(false);
-            }
+            // 初期化は PauseManager に任せる（パネルの表示/非表示はPauseManagerが制御）
             
             // ボタンのイベント設定
             SetupButtons();

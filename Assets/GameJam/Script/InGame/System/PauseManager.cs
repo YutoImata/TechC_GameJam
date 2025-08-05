@@ -1,5 +1,6 @@
 using UnityEngine;
 using Tech.C.UI;
+using System.Collections;
 
 namespace Tech.C.System
 {
@@ -36,6 +37,17 @@ namespace Tech.C.System
         protected override void Init()
         {
             originalTimeScale = Time.timeScale;
+            
+            // Start()よりも後に確実に初期化されるように少し遅延
+            StartCoroutine(InitializePauseUI());
+        }
+        
+        /// <summary>
+        /// PauseUIの初期化（少し遅延して確実に実行）
+        /// </summary>
+        private IEnumerator InitializePauseUI()
+        {
+            yield return new WaitForEndOfFrame();
             
             // ポーズUIは最初は非表示
             if (pauseUI != null)
