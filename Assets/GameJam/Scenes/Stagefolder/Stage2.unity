@@ -187,9 +187,33 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: poolSets.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 327c809d887a9134398d84790bc6f51c, type: 3}
+    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: poolSets.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 0798dcf954d75de4ba5a9013eb4ecdc3, type: 3}
+    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: poolSets.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 2179cbe73656c6e44a2911143ce98bcd, type: 3}
+    - target: {fileID: 4365809455118805081, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: poolSets.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 45b022d5b98c2fc4a8d54156e6d3fc03, type: 3}
+    - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: maxFallSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: spawnInterval
-      value: 1.45
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563780119576681045, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: useRandomFallSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6514815756015451814, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: spawnRateData

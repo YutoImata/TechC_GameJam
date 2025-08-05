@@ -195,6 +195,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: b92a613c9be55794b974cc98a6cc3819, type: 3}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: b22e6323dce6e9447b40aad1843a736d, type: 3}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 4939447f2ae2b584ca1edc97fd6219f4, type: 3}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: f9d342488851ff744ae3e409e1bb9f28, type: 3}
     - target: {fileID: 4634760811927122412, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.32
@@ -204,8 +220,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: maxFallSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: spawnInterval
-      value: 1.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5563780119576681045, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: useRandomFallSpeed
