@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Tech.C;
 
 namespace Tech.C.UI
 {
@@ -19,6 +18,7 @@ namespace Tech.C.UI
         
         [Header("設定")]
         [SerializeField] private bool showButtons = true; // ボタンを表示するか
+        [SerializeField] private bool enableHoverEffect = true; // ホバー効果を有効にするか
         
         private void Start()
         {
@@ -30,6 +30,12 @@ namespace Tech.C.UI
             
             // ボタンのイベント設定
             SetupButtons();
+            
+            // ホバー効果を追加
+            if (enableHoverEffect)
+            {
+                AddHoverEffects();
+            }
         }
         
         /// <summary>
@@ -131,6 +137,31 @@ namespace Tech.C.UI
             if (SceneController.I != null)
             {
                 SceneController.I.LoadScene("Title");
+            }
+        }
+        
+        /// <summary>
+        /// ボタンにホバー効果を追加
+        /// </summary>
+        private void AddHoverEffects()
+        {
+            // 各ボタンにホバー効果コンポーネントを追加
+            AddHoverEffectToButton(resumeButton);
+            AddHoverEffectToButton(retryButton);
+            AddHoverEffectToButton(titleButton);
+        }
+        
+        /// <summary>
+        /// 指定されたボタンにホバー効果を追加
+        /// </summary>
+        private void AddHoverEffectToButton(Button button)
+        {
+            if (button == null) return;
+            
+            // 既にホバー効果が付いていないかチェック
+            if (button.GetComponent<ButtonHoverEffect>() == null)
+            {
+                button.gameObject.AddComponent<ButtonHoverEffect>();
             }
         }
     }
