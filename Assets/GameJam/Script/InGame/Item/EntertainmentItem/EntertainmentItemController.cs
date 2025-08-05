@@ -20,6 +20,13 @@ namespace Tech.C.Item
         private ItemPool itemPool;
         private int poolIndex;
 
+        private ItemMover mover;
+
+        void Awake()
+        {
+            mover = GetComponent<ItemMover>();
+        }
+
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -27,7 +34,7 @@ namespace Tech.C.Item
 
         void Update()
         {
-            Fall();
+            mover.MoveItem();
         }
 
         // 毎フレームの落下・移動処理

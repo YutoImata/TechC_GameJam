@@ -183,3 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveType: 0
   fallSpeed: 2
+  zigzagDirection: {x: 1, y: 0}
+  zigzagAmplitude: 1.5
+  zigzagFrequency: 2
+  playerObject: {fileID: 2074521694677656342, guid: 4276adfadebf9454a839163ff59032b6, type: 3}
