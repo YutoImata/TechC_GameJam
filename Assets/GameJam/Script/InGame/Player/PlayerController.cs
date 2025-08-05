@@ -35,12 +35,10 @@ namespace Tech.C.Player
                 {
                     if (pauseManagerPaused)
                     {
-                        Debug.Log("[PlayerController] ポーズ状態に変更");
                         OnPause();
                     }
                     else
                     {
-                        Debug.Log("[PlayerController] ポーズ解除状態に変更");
                         OnResume();
                     }
                     isPaused = pauseManagerPaused;
@@ -55,26 +53,17 @@ namespace Tech.C.Player
         public void OnMove(InputAction.CallbackContext context)
         {
             // ポーズ中は入力を無視
-            if (isPaused) 
-            {
-                Debug.Log("[PlayerController] ポーズ中のため移動入力を無視");
-                return;
-            }
+            if (isPaused) return;
             
             // 横方向のみ取得
             float x = context.ReadValue<Vector2>().x;
             moveInput = new Vector2(x, 0);
         }
 
-
         public void OnFire(InputAction.CallbackContext context)
         {
             // ポーズ中は入力を無視
-            if (isPaused) 
-            {
-                Debug.Log("[PlayerController] ポーズ中のため射撃入力を無視");
-                return;
-            }
+            if (isPaused) return;
             
             if (context.performed)
             {

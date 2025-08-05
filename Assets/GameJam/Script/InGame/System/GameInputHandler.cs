@@ -9,31 +9,15 @@ namespace Tech.C.System
     /// </summary>
     public class GameInputHandler : MonoBehaviour
     {
-        private bool escKeyPressed = false;
-        
         private void Update()
         {
-            // Time.timeScale = 0の時でもESCキーを検出できるようにする
-            if (Input.GetKeyDown(KeyCode.Escape) && !escKeyPressed)
+            // Time.timeScale = 0の時でもESCキーを検出
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                escKeyPressed = true;
-                Debug.Log("[GameInputHandler] ESCキー入力検出（旧Input System）");
-                
                 if (PauseManager.I != null)
                 {
-                    Debug.Log("[GameInputHandler] PauseManagerにポーズ切り替えを要求");
                     PauseManager.I.TogglePause();
                 }
-                else
-                {
-                    Debug.LogError("[GameInputHandler] PauseManagerが見つかりません");
-                }
-            }
-            
-            // キーを離したらフラグをリセット
-            if (Input.GetKeyUp(KeyCode.Escape))
-            {
-                escKeyPressed = false;
             }
         }
         
@@ -42,20 +26,11 @@ namespace Tech.C.System
         /// </summary>
         public void OnPause(InputAction.CallbackContext context)
         {
-            Debug.Log($"[GameInputHandler] ESCキー入力検出 - phase: {context.phase}");
-            
             if (context.performed)
             {
-                Debug.Log("[GameInputHandler] ESCキー入力が実行されました");
-                
                 if (PauseManager.I != null)
                 {
-                    Debug.Log("[GameInputHandler] PauseManagerにポーズ切り替えを要求");
                     PauseManager.I.TogglePause();
-                }
-                else
-                {
-                    Debug.LogError("[GameInputHandler] PauseManagerが見つかりません");
                 }
             }
         }

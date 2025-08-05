@@ -85,7 +85,6 @@ namespace Tech.C.Bullet
             {
                 pausedVelocity = rb.linearVelocity;
                 rb.linearVelocity = Vector2.zero;
-                Debug.Log($"[BulletController] 弾をポーズ - 保存された速度: {pausedVelocity}");
             }
         }
         
@@ -95,7 +94,6 @@ namespace Tech.C.Bullet
             if (rb != null)
             {
                 rb.linearVelocity = pausedVelocity;
-                Debug.Log($"[BulletController] 弾のポーズ解除 - 復元された速度: {pausedVelocity}");
             }
         }
         

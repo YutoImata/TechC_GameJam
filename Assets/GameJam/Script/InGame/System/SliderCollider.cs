@@ -10,7 +10,6 @@ namespace Tech.C
     {
         [Header("設定")]
         [SerializeField] private bool blockPlayer = true; // プレイヤーをブロックするか
-        [SerializeField] private float pushBackForce = 5f; // 押し返す力
 
         private void Start()
         {
