@@ -60,18 +60,28 @@ namespace Tech.C.Item
                 Vector3 spawnPos = itemSpawner.GetRandomSpawnPosition();
                 GameObject item = itemFactory.GetRandomItem(spawnPos);
 
-                // 娯楽アイテム
-                var entertainmentCtrl = item.GetComponent<EntertainmentItemController>();
-                if (entertainmentCtrl != null)
+                if (item != null)
                 {
-                    entertainmentCtrl.SetFallSpeed(GetFallSpeed());
-                }
+                    // 境界チェッカーがない場合は追加（プレハブに追加し忘れの対策）
+                    if (item.GetComponent<ItemBoundaryChecker>() == null)
+                    {
+                        Debug.LogWarning($"アイテム {item.name} にItemBoundaryCheckerがありません。自動追加します。");
+                        item.AddComponent<ItemBoundaryChecker>();
+                    }
 
-                // ギャンブルアイテム
-                var gamblingCtrl = item.GetComponent<GamblingItemController>();
-                if (gamblingCtrl != null)
-                {
-                    gamblingCtrl.SetFallSpeed(GetFallSpeed());
+                    // 娯楽アイテム
+                    var entertainmentCtrl = item.GetComponent<EntertainmentItemController>();
+                    if (entertainmentCtrl != null)
+                    {
+                        entertainmentCtrl.SetFallSpeed(GetFallSpeed());
+                    }
+
+                    // ギャンブルアイテム
+                    var gamblingCtrl = item.GetComponent<GamblingItemController>();
+                    if (gamblingCtrl != null)
+                    {
+                        gamblingCtrl.SetFallSpeed(GetFallSpeed());
+                    }
                 }
             }
         }
@@ -80,5 +90,18 @@ namespace Tech.C.Item
         {
             return useRandomFallSpeed ? Random.Range(minFallSpeed, maxFallSpeed) : defaultFallSpeed;
         }
+        
+        // ポーズ機能
+        public void OnPause()
+        {
+            isPaused = true;
+        }
+        
+        public void OnResume()
+        {
+            isPaused = false;
+        }
+        
+        public bool IsPaused => isPaused;
     }
 }
