@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entertainmentType: 1
   fallSpeed: 2
-  entertainmentValue: 4
+  entertainmentValue: 10
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0

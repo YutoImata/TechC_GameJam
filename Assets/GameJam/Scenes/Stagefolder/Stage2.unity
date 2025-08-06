@@ -478,6 +478,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 379325347141370998, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 1097822273505913617, guid: 134515a5226e3e548bbc1455662921fe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1046,6 +1062,7 @@ MonoBehaviour:
   retryButton: {fileID: 1967480669}
   titleButton: {fileID: 1239771366}
   showButtons: 1
+  enableHoverEffect: 1
 --- !u!1 &1792267550
 GameObject:
   m_ObjectHideFlags: 0

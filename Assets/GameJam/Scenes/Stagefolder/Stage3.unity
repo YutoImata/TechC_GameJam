@@ -1258,6 +1258,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 379325347141370998, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 3316301877087609423, guid: 3100cb756c8df034f933324fd50b25ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04661119
@@ -1625,6 +1641,7 @@ MonoBehaviour:
   retryButton: {fileID: 772608076}
   titleButton: {fileID: 1139446950}
   showButtons: 1
+  enableHoverEffect: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -127,6 +127,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 379325347141370998, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 379325347141370998, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 2740026342934268497, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -179,6 +195,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: 4939447f2ae2b584ca1edc97fd6219f4, type: 3}
+    - target: {fileID: 4365809455118805081, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
+      propertyPath: poolSets.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 6882585684949341207, guid: f9d342488851ff744ae3e409e1bb9f28, type: 3}
     - target: {fileID: 4898306457451332878, guid: bf7c08df48777d74f9bc4ba24e0797c3, type: 3}
       propertyPath: m_IsActive
       value: 0
