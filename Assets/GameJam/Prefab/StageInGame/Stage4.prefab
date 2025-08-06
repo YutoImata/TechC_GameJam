@@ -1299,16 +1299,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSets:
-  - prefab: {fileID: 6882585684949341207, guid: 91cd16b03abee1e47a0133cd472302de, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: e08890f859351a54fb9b1ece09dc8020, type: 3}
     parent: {fileID: 1268757060584589959}
     initialSize: 20
-  - prefab: {fileID: 6882585684949341207, guid: a50553e6c6c2de342b5e78c62be30c07, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: 79d6522ef78c284498bfae4350681d74, type: 3}
     parent: {fileID: 8414308713669095644}
     initialSize: 20
-  - prefab: {fileID: 6882585684949341207, guid: f069f2bf7ec8d82458151af419ee9754, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: 3ed4fcb227500f148b6a583a36bd03c5, type: 3}
     parent: {fileID: 8151115651022791696}
     initialSize: 20
-  - prefab: {fileID: 6882585684949341207, guid: 4174f2d650839f54c875efc987a4b9f9, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: 7a0a1c310c0e4964fa3036eee8632faa, type: 3}
     parent: {fileID: 482193284202617694}
     initialSize: 20
 --- !u!114 &6514815756015451814
@@ -1344,11 +1344,11 @@ MonoBehaviour:
   itemSpawner:
     spawnLeft: {fileID: 4065269194902474427}
     spawnRight: {fileID: 3116984180330212910}
-  spawnInterval: 0.6
+  spawnInterval: 0.2
   defaultFallSpeed: 2
   useRandomFallSpeed: 1
   minFallSpeed: 2
-  maxFallSpeed: 12
+  maxFallSpeed: 14
   itemFactory: {fileID: 6514815756015451814}
 --- !u!1 &3681350335948616940
 GameObject:

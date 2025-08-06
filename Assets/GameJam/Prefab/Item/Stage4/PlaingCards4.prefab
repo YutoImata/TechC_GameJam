@@ -167,8 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamblingType: 1
-  gambleValueValue: 25
-  fallSpeed: 4
+  gambleValueValue: 99
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +184,11 @@ MonoBehaviour:
   useRandomMoveType: 1
   moveTypeWeights:
   - moveType: 0
-    weight: 0
+    weight: 50
   - moveType: 1
     weight: 100
   - moveType: 2
-    weight: 100
-  fallSpeed: 2
+    weight: 50
   zigzagDirection: {x: 1, y: 0}
   zigzagAmplitude: 1.5
   zigzagFrequency: 2

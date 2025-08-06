@@ -171,22 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage4
       objectReference: {fileID: 0}
-    - target: {fileID: 4365809455118805081, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
-      propertyPath: poolSets.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: e08890f859351a54fb9b1ece09dc8020, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
-      propertyPath: poolSets.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 79d6522ef78c284498bfae4350681d74, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
-      propertyPath: poolSets.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 3ed4fcb227500f148b6a583a36bd03c5, type: 3}
-    - target: {fileID: 4365809455118805081, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
-      propertyPath: poolSets.Array.data[3].prefab
-      value: 
-      objectReference: {fileID: 6882585684949341207, guid: 7a0a1c310c0e4964fa3036eee8632faa, type: 3}
     - target: {fileID: 4834884529088911362, guid: 8c2e56361750888469f29c614e8bfdae, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
