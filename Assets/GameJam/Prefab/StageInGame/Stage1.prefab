@@ -253,11 +253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 2560, y: 1440}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1042,10 +1042,10 @@ MonoBehaviour:
   - prefab: {fileID: 6882585684949341207, guid: b22e6323dce6e9447b40aad1843a736d, type: 3}
     parent: {fileID: 8414308713669095644}
     initialSize: 20
-  - prefab: {fileID: 6882585684949341207, guid: f069f2bf7ec8d82458151af419ee9754, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: 4939447f2ae2b584ca1edc97fd6219f4, type: 3}
     parent: {fileID: 8151115651022791696}
     initialSize: 20
-  - prefab: {fileID: 6882585684949341207, guid: 4174f2d650839f54c875efc987a4b9f9, type: 3}
+  - prefab: {fileID: 6882585684949341207, guid: f9d342488851ff744ae3e409e1bb9f28, type: 3}
     parent: {fileID: 482193284202617694}
     initialSize: 20
 --- !u!114 &6514815756015451814
@@ -1585,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6079070071338478628
 Transform:
   m_ObjectHideFlags: 0
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   retryButton: {fileID: 7799917068540305361}
   titleButton: {fileID: 2518119566984551272}
   showButtons: 1
+  enableHoverEffect: 1
 --- !u!1 &5060568187253860494
 GameObject:
   m_ObjectHideFlags: 0
