@@ -169,6 +169,7 @@ MonoBehaviour:
   entertainmentType: 1
   fallSpeed: 3
   entertainmentValue: 15
+  hitEffectPrefab: {fileID: 6592050034866619881, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
 --- !u!114 &-2871322804671486626
 MonoBehaviour:
   m_ObjectHideFlags: 0

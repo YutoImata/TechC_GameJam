@@ -13,6 +13,9 @@ namespace Tech.C.Item
         [Header("設定")]
         [SerializeField] private float fallSpeed = 2f;
         [SerializeField] private int entertainmentValue = 10;
+        
+        [Header("エフェクト")]
+        [SerializeField] private GameObject hitEffectPrefab; // ヒット時のエフェクトプレハブ
 
         private Rigidbody2D rb;
 
@@ -116,8 +119,26 @@ namespace Tech.C.Item
         {
             if (other.CompareTag("Bullet"))
             {
+                // パーティクルエフェクトを再生
+                PlayHitParticle();
+                
                 GaugeController.I.AddEntertainment(entertainmentValue);
                 OnCollected(); // 弾に当たった場合はPoolに返却
+            }
+        }
+        
+        /// <summary>
+        /// ヒット時のエフェクトを表示
+        /// </summary>
+        private void PlayHitParticle()
+        {
+            if (hitEffectPrefab != null)
+            {
+                // エフェクトの位置をアイテムの位置に設定
+                hitEffectPrefab.transform.position = transform.position;
+                
+                // エフェクトを表示
+                hitEffectPrefab.SetActive(true);
             }
         }
 
