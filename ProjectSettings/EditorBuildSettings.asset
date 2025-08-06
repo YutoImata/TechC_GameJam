@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameJam/Scenes/Badend.unity
     guid: d717ea26122961541adf87db96f984a7
+  - enabled: 1
+    path: Assets/GameJam/Scenes/Stagefolder/Stage4.unity
+    guid: 64a5281ba64be60419ff5d53f9f12f41
   - enabled: 0
     path: Assets/GameJam/Scenes/Stagefolder/User/Work_Yuto.unity
     guid: 7b48abc7bc3ae054d9f2f2f6517cb75f
