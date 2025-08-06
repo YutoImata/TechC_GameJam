@@ -12,7 +12,9 @@ namespace Tech.C.Item
 
         [Header("設定")]
         [SerializeField] private int gambleValueValue = 10;
-        [SerializeField] private float fallSpeed = 2f;
+        
+        // fallSpeedはItemManagerから設定されるため、インスペクターには表示しない
+        private float fallSpeed = 2f;
 
         private Rigidbody2D rb;
 
@@ -126,6 +128,11 @@ namespace Tech.C.Item
         public void SetFallSpeed(float speed)
         {
             fallSpeed = speed;
+            // ItemMoverにも速度を設定
+            if (mover != null)
+            {
+                mover.SetFallSpeed(speed);
+            }
         }
         
         // ポーズ機能

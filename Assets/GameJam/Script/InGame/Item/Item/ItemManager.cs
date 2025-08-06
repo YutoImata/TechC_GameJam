@@ -13,10 +13,18 @@ namespace Tech.C.Item
         
         [Header("生成する間隔")]
         [SerializeField] private float spawnInterval = 2f;
-        [Header("アイテム落下速度ランダム設定")]
+        
+        [Header("アイテム落下速度制御（全アイテム共通）")]
+        [Tooltip("固定速度として使用する値")]
         [SerializeField] private float defaultFallSpeed = 2f;
+        
+        [Space]
+        [Header("ランダム速度設定")]
+        [Tooltip("ONにすると、アイテムごとにランダムな落下速度が設定されます")]
         [SerializeField] private bool useRandomFallSpeed = false;
+        [Tooltip("ランダム速度の最小値")]
         [SerializeField] private float minFallSpeed = 2f;
+        [Tooltip("ランダム速度の最大値")]
         [SerializeField] private float maxFallSpeed = 6f;
 
         [Header("Factory参照")]

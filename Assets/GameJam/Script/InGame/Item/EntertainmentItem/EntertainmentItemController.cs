@@ -11,8 +11,10 @@ namespace Tech.C.Item
         [SerializeField] private EntertainmentType entertainmentType;
 
         [Header("設定")]
-        [SerializeField] private float fallSpeed = 2f;
         [SerializeField] private int entertainmentValue = 10;
+        
+        // fallSpeedはItemManagerから設定されるため、インスペクターには表示しない
+        private float fallSpeed = 2f;
         
         [Header("エフェクト")]
         [SerializeField] private GameObject hitEffectPrefab; // ヒット時のエフェクトプレハブ
@@ -145,6 +147,11 @@ namespace Tech.C.Item
         public void SetFallSpeed(float speed)
         {
             fallSpeed = speed;
+            // ItemMoverにも速度を設定
+            if (mover != null)
+            {
+                mover.SetFallSpeed(speed);
+            }
         }
         
         // ポーズ機能

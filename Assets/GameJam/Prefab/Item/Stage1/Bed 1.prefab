@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entertainmentType: 1
-  fallSpeed: 3
   entertainmentValue: 15
   hitEffectPrefab: {fileID: 6592050034866619881, guid: 943e87b5b26776f4ebb3466296c85a65, type: 3}
 --- !u!114 &-2871322804671486626
@@ -183,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: 0
-  useRandomMoveType: 0
+  useRandomMoveType: 1
   moveTypeWeights:
   - moveType: 0
     weight: 100
@@ -191,7 +190,6 @@ MonoBehaviour:
     weight: 24
   - moveType: 2
     weight: 0
-  fallSpeed: 2
   zigzagDirection: {x: 1, y: 0}
   zigzagAmplitude: 0
   zigzagFrequency: 10

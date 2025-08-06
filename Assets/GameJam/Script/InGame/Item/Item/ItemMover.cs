@@ -11,7 +11,8 @@ namespace Tech.C.Item
         [SerializeField] private bool useRandomMoveType = false;
         [SerializeField] private List<MoveTypeWeight> moveTypeWeights;
 
-        public float fallSpeed = 2f;
+        // fallSpeedはItemManagerから設定されるため、インスペクターには表示しない
+        private float fallSpeed = 2f;
         [SerializeField] private Vector2 zigzagDirection = Vector2.right;
         [SerializeField] private float zigzagAmplitude = 1.5f;
         [SerializeField] private float zigzagFrequency = 2f;
@@ -73,6 +74,14 @@ namespace Tech.C.Item
                     transform.position += moveDirection * fallSpeed * Time.deltaTime;
                     break;
             }
+        }
+        
+        /// <summary>
+        /// 落下速度を設定
+        /// </summary>
+        public void SetFallSpeed(float speed)
+        {
+            fallSpeed = speed;
         }
     }
 
