@@ -34,11 +34,6 @@ namespace Tech.C.Item
         private float timer;
         private bool isPaused = false;
 
-        void Start()
-        {
-            // アイテム生成開始
-        }
-
         void Update()
         {
             // ポーズ中はアイテム生成を停止
@@ -85,18 +80,5 @@ namespace Tech.C.Item
         {
             return useRandomFallSpeed ? Random.Range(minFallSpeed, maxFallSpeed) : defaultFallSpeed;
         }
-        
-        // ポーズ機能
-        public void OnPause()
-        {
-            isPaused = true;
-        }
-        
-        public void OnResume()
-        {
-            isPaused = false;
-        }
-        
-        public bool IsPaused => isPaused;
     }
 }

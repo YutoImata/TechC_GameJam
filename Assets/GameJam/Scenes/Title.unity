@@ -941,7 +941,7 @@ MonoBehaviour:
   commentMoverPrefab: {fileID: 1184766228}
   displayParent: {fileID: 1908247822}
   commentPool: {fileID: 1184766226}
-  displayInterval: 2
+  displayInterval: 4
 --- !u!114 &1184766228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  acceleration: 1
+  acceleration: 1.5
   targetPosition: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
   fadeStartTime: 1
@@ -1348,6 +1348,8 @@ MonoBehaviour:
     sceneName: Stage2
   - button: {fileID: 562709297}
     sceneName: Stage3
+  - button: {fileID: 915922979}
+    sceneName: Stage4
   loadingPanel: {fileID: 0}
   progressBar: {fileID: 0}
 --- !u!1 &1579695476
